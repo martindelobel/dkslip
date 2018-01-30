@@ -2,11 +2,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { catalogActions } from "../store/catalog/actions.js";
-import { displayCatalog } from "../store/catalog/selectors.js";
+import store from "./store/store";
+import { Provider } from "react-redux";
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(
+   <Provider store={store}>
+      <App />
+    </Provider>, div);
   ReactDOM.unmountComponentAtNode(div);
 });

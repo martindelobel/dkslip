@@ -34,7 +34,7 @@ class Catalog extends Component {
     return (
       <div>
         {slippedCat.map(cat => (
-          <ul>
+          <ul key={cat.id}>
             <li>{cat.label}</li>
           </ul>
         ))}
