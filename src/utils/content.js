@@ -7,13 +7,6 @@ class Content extends Component {
   render(){
     return(
       <div className="content-wrap">
-
-      {this.props.user.id ? (
-      <div>
-      <span>{this.props.user.fullname}</span>
-      <img alt={this.props.user.fullname} src={this.props.user.avatar} />
-      </div>
-      ) : null}
         <div className="best-sellers-items">
             <h3 className="best-sellers-title"> Best Sellers </h3>
             <div className="best-sellers-row">

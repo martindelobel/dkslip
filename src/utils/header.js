@@ -13,25 +13,31 @@ class Header extends Component {
         <div className="header-content">
           <div className="Navbar-content">
             <div className="Logo">
-            <p className="dk-text">DK</p><img className="logo-image" src={logo}></img><p className="slip-text">SLIP</p>
+              <p className="dk-text">DK</p><img className="logo-image" src={logo}></img><p className="slip-text">SLIP</p>
             </div>
             <div className="Item-Navbar">
-                <span>Home</span>
-                <span>Catalog</span>
-                <span><div className="google-connection">
+                <span className="item-menu">Home</span>
+                <span className="item-menu">Catalog</span>
+                <div className="google-connection">
               {this.props.user.id ? (
-                  <div className="signout" onClick={this.props.signOut}>
+                  <div className="signout item-menu" onClick={this.props.signOut}>
                     Sign out
                   </div>
                 ) : (
                   <div
                     className="g-signin2"
-                    style={{backgroundColor: "rgba(255,255,255, 0)"}}
-                    data-onsuccess="googleConnectCallback">Sign In</div>
+                    data-onsuccess="googleConnectCallback"
+                    data-theme="light"/>
                 )}
                 </div>
-                </span>
             </div>
+          </div>
+          <div className="title-slider">
+          {this.props.user.id ? (
+          <div>
+          <span>Welcome {this.props.user.fullname}</span>
+          </div>
+          ) : null}
           </div>
         </div>
       </div>
