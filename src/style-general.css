@@ -19,7 +19,7 @@ body, html {
 }
 /* START HEADER */
 .Header-wrap {
-  height: 100vh;
+  height: 75vh;
   width: 100vw;
   background-position: center;
   background-size: cover;
@@ -54,7 +54,7 @@ body, html {
     margin-left: 5vw;
   }
   .logo-image{
-    width: 10vh;
+    width: 5vh;
     height: auto;
   }
   .dk-text {
@@ -62,41 +62,27 @@ body, html {
   }
   .slip-text{
     padding-top: 4vh;
-    font-size: 3vw;
+    font-size: 1.5vw;
   }
-  .Navbar-content ul {
+  .Item-Navbar {
+    margin-right: 5vw;
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .Item-Navbar span {
     color: #FFF;
     text-transform: uppercase;
-    list-style: none;
-    display: block;
-    float: right;
-    position: relative;
-    font-size: 2vw;
+    font-size: 1.2vw;
   }
-  .Navbar-content li:last-child{
-    margin-right: 4vw;
-  }
-  .Navbar-content li {
-    display: inline;
-    padding-left: 5vw;
-  }
-  .Navbar-content li:hover {
+  .Navbar-content span:hover {
     color: red;
     transition: color 1s;
+    cursor: copy;
   }
   /* END NAVBAR */
 
-  /* START SLIDER SETTINGS */
-  .Slider-Content {
-    width: 100%;
-    text-align: center;
-    color: #F3F3F3;
-    line-height: 50vh;
-  }
-  h2 {
-      font-size: 15vw;
-  }
-  /* END SLIDER SETTINGS   */
 /* END HEADER */
 
 
@@ -225,6 +211,7 @@ body, html {
 
 .footer-middle {
   justify-content: space-around;
+  align-items:center;
   display: flex;
   flex-direction: row;
 }

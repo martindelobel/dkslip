@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { signOut } from "../store/user/actions";
+import { getUserState } from "../store/user/selectors";
 
 class Content extends Component {
   render(){
     return(
       <div className="content-wrap">
+
+      {this.props.user.id ? (
+      <div>
+      <span>{this.props.user.fullname}</span>
+      <img alt={this.props.user.fullname} src={this.props.user.avatar} />
+      </div>
+      ) : null}
         <div className="best-sellers-items">
             <h3 className="best-sellers-title"> Best Sellers </h3>
             <div className="best-sellers-row">
@@ -104,4 +114,4 @@ class Content extends Component {
 }
 
 
-export default Content;
+export default connect(getUserState, signOut)(Content);
