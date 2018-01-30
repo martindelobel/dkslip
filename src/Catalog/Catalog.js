@@ -22,14 +22,14 @@ const slipCategories = [
 ];
 
 class Catalog extends Component {
-
   componentDidMount() {
     this.props.getCatalog();
   }
 
   render() {
-   const slippedCat = this.props.catalog.catList.filter(cat => slipCategories.includes(cat.id))
-
+    const slippedCat = this.props.catalog.catList.filter(cat =>
+      slipCategories.includes(cat.id)
+    );
 
     return (
       <div>
