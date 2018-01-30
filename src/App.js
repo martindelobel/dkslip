@@ -4,7 +4,6 @@ import Header from './utils/header';
 import Footer from './utils/footer';
 import Content from './utils/content';
 import logo from './logo.svg';
-import './App.css';
 import Catalog from './Catalog/Catalog'
 
 class App extends Component {
