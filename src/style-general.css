@@ -2,14 +2,14 @@ body, html {
   margin: 0 !important;
   padding: 0 !important;
   /* DEFINE WIDTH AND HEIGHT TO REPSONSIVE */
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 #root {
   /* DEFINE WIDTH AND HEIGHT TO REPSONSIVE */
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .General-Content {
@@ -20,6 +20,7 @@ body, html {
 /* START HEADER */
 .Header-wrap {
   height: 100vh;
+  width: 100vw;
   background-position: center;
   background-size: cover;
   animation: sliderAnimation 20s infinite;
@@ -35,17 +36,33 @@ body, html {
 
   /* START NAVBAR */
   .Navbar-content {
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 10%;
-   background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   .Navbar-content .Logo {
+    width: 100vw;
     color: #FFF;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
     margin-left: 5vw;
+  }
+  .logo-image{
+    width: 10vh;
+    height: auto;
+  }
+  .dk-text {
+    font-size: 2vw;
+  }
+  .slip-text{
+    padding-top: 4vh;
+    font-size: 3vw;
   }
   .Navbar-content ul {
     color: #FFF;
@@ -54,6 +71,7 @@ body, html {
     display: block;
     float: right;
     position: relative;
+    font-size: 2vw;
   }
   .Navbar-content li:last-child{
     margin-right: 4vw;
@@ -70,12 +88,13 @@ body, html {
 
   /* START SLIDER SETTINGS */
   .Slider-Content {
+    width: 100%;
     text-align: center;
     color: #F3F3F3;
     line-height: 50vh;
   }
   h2 {
-      font-size: 138pt;
+      font-size: 15vw;
   }
   /* END SLIDER SETTINGS   */
 /* END HEADER */

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../style-general.css';
+import logo from './logo.png';
 
 
 class Header extends Component {
@@ -9,7 +10,7 @@ class Header extends Component {
         <div className="header-content">
           <div className="Navbar-content">
             <div className="Logo">
-            <p>DKSLIP</p>
+            <p className="dk-text">DK</p><img className="logo-image" src={logo}></img><p className="slip-text">SLIP</p>
             </div>
             <div className="Item-Navbar">
               <ul>
