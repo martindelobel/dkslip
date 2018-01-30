@@ -5,7 +5,7 @@ import Footer from './utils/footer';
 import Content from './utils/content';
 import logo from './logo.svg';
 import Catalog from './Catalog/Catalog'
-import Cart from './Cart';
+import Cart from './cart/Cart';
 
 class App extends Component {
   render() {
