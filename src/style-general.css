@@ -322,6 +322,8 @@ body, html {
   align-items:center;
   display: flex;
   flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .footer-middle .footer-review-item {
