@@ -5,7 +5,7 @@ import Footer from './utils/footer';
 import Content from './utils/content';
 import logo from './logo.svg';
 import './App.css';
-import Getproduct from './Catalog/Product'
+import Catalog from './Catalog/Catalog'
 
 class App extends Component {
   render() {
