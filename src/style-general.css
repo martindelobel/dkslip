@@ -1,0 +1,234 @@
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+  /* DEFINE WIDTH AND HEIGHT TO REPSONSIVE */
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  /* DEFINE WIDTH AND HEIGHT TO REPSONSIVE */
+  height: 100%;
+  width: 100%;
+}
+
+.General-Content {
+  /* DEFINE HEIGHT TO REPSONSIVE */
+  display: flex;
+  flex-direction: column;
+}
+/* START HEADER */
+.Header-wrap {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  animation: sliderAnimation 20s infinite;
+}
+
+
+@keyframes sliderAnimation {
+  0%{background-image: url('https://img.vidible.tv/prod/2017-03/22/58d2a42ecd4fed37fcf59f5e/58d2a42ed85a1026cfa65fa6_o_U_v1.jpg');}
+  33%{background-image: url('http://www.indiewire.com/wp-content/uploads/2017/12/mv5bnzczmdgzodytyji4os00ytlklwe1mdqtztewotrmmduyywq3xkeyxkfqcgdeqxvyndg2mjuxnjm-_v1_sx1777_cr001777975_al_.jpg');}
+  66%{background-image: url('https://bloximages.chicago2.vip.townnews.com/wacotrib.com/content/tncms/assets/v3/editorial/7/6b/76b071ac-02e9-52c8-8aad-7cefc9bb4802/5930919a1dc28.image.jpg?resize=1200%2C769');}
+  100%{background-image: url('https://img.vidible.tv/prod/2017-03/22/58d2a42ecd4fed37fcf59f5e/58d2a42ed85a1026cfa65fa6_o_U_v1.jpg');}
+}
+
+  /* START NAVBAR */
+  .Navbar-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10%;
+   background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .Navbar-content .Logo {
+    color: #FFF;
+    text-transform: uppercase;
+    margin-left: 5vw;
+  }
+  .Navbar-content ul {
+    color: #FFF;
+    text-transform: uppercase;
+    list-style: none;
+    display: block;
+    float: right;
+    position: relative;
+  }
+  .Navbar-content li:last-child{
+    margin-right: 4vw;
+  }
+  .Navbar-content li {
+    display: inline;
+    padding-left: 5vw;
+  }
+  .Navbar-content li:hover {
+    color: red;
+    transition: color 1s;
+  }
+  /* END NAVBAR */
+
+  /* START SLIDER SETTINGS */
+  .Slider-Content {
+    text-align: center;
+    color: #F3F3F3;
+    line-height: 50vh;
+  }
+  h2 {
+      font-size: 138pt;
+  }
+  /* END SLIDER SETTINGS   */
+/* END HEADER */
+
+
+/* START CONTENT SETTING */
+.content-wrap {
+  height: auto;
+}
+
+  /* START BEST SELLERS */
+
+  .best-sellers-items {
+    height: 20%;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-bottom: 3vh;
+  }
+
+
+  .best-sellers-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+  /* END BEST SELLERS SETTINGS */
+
+  /* START ITEM SETTINGS */
+
+  .item-content {
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .item-content .title-item {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .item-content img{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .item-content p{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .item-content .price{
+    font-size: 15pt;
+  }
+
+   .item-button-zone {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+   }
+
+   .item-button-zone button {
+     color: #FFF;
+     background-color: rgba(204, 51, 0, 1);
+     border-style: none;
+     border-radius: 5px;
+     font-size: 12pt;
+     height: 5vh;
+   }
+   .item-button-zone button:hover {
+     color: rgba(204, 51, 0, 1);
+     background-color: rgba(255, 255, 255, 1);
+     border-radius: 5px;
+     opacity: 1;
+     border: solid 1px rgba(204, 51, 0, 1);
+     height: 5vh;
+   }
+   /* END ITEM SETTINGS*/
+
+
+  /* START REVIEWS SETTINGS */
+  .Reviews-test{
+    background-color: #2E2E2E;
+   height: 40%;
+   color:#FCFCFC;
+   padding: 20px;
+   text-align: center;
+  }
+
+  /* END REVIEWS SETTINGS */
+
+  /* START NEWEST SETTINGS */
+
+  .news-items-test {
+
+    height: 20%;
+    color: #000;
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 20px;
+  }
+
+  /* END NEWEST SETTINGS */
+
+/* END CONTENT SETTING */
+
+
+/* START FOOTER  */
+.footer-wrap {
+  color: #F9F9F9;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #2E2E2E;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-middle {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-middle .footer-review-item {
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.footer-wrap ul {
+  text-transform: uppercase;
+  font-weight: lighter;
+  list-style: none;
+  text-align: center;
+}
+.footer-wrap li {
+  padding-bottom: 2vh;
+}
+
+.vertical-separator{
+    background-color: #FFF;
+    width: 1px;
+    height: 25vh;
+}
+/* END FOOTER */
