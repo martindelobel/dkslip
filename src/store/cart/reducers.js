@@ -1,4 +1,4 @@
-const initialState = localStorage.getItem("productList")
+const initialState = (localStorage && localStorage.getItem("productList"))
   ? {productList : JSON.parse(localStorage.getItem("productList"))}
   : {productList : [{id : 777, quantity:1}]};
 
