@@ -13,7 +13,6 @@ class Cart extends Component {
   //   return {props.counter} * {props.price}
   // }
 
-
   render() {
     return (
       <div className="General-Cart">

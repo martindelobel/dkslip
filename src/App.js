@@ -12,7 +12,6 @@ class App extends Component {
     return (
       <div className="General-Content">
         <Header />
-        <Cart />
         <Content />
         <Footer />
       </div>
