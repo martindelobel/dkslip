@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../store/user/actions";
-import { getUserState } from "../store/user/selectors";
+import { cartAction} from "../store/cart/actions";
+import { displayCart } from "../store/cart/selectors";
 import Category from "../Catalog/Category";
 import Product from "../Catalog/Product";
 import Cart from "../cart/Cart";
