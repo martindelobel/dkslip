@@ -12,20 +12,28 @@ class Product extends Component {
   render() {
     return (
       <div className="Product">
-        <div>
-          <ul>
-            <li>
-              <p>{this.props.product.product.title}</p>
-              <p>{this.props.product.product.description}</p>
-              <img
-                src={
-                  "https://www.decathlon.fr/media/" +
-                  this.props.product.product.image_path
-                }
-              />
-              <p>{this.props.product.product.min_price}</p>
-            </li>
-          </ul>
+        <div className="content-wrap">
+          <div className="best-sellers-items">
+            <h3 className="best-sellers-title" />
+            <div className="best-sellers-row">
+              <div className="item-content">
+                <span className="title-item">
+                  {this.props.product.product.title}
+                </span>
+                <img
+                  src={
+                    "https://www.decathlon.fr/media/" +
+                    this.props.product.product.image_path
+                  }
+                />
+                <p>{this.props.product.product.description}</p>
+                <p className="price">{this.props.product.product.min_price}€</p>
+              </div>
+              <div className="item-button-zone">
+                <button>Add to cart</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );
