@@ -6,6 +6,8 @@ import { displayCart } from "../store/cart/selectors";
 import Category from "../Catalog/Category";
 import Product from "../Catalog/Product";
 import Cart from "../cart/Cart";
+import { getUserState } from "../store/user/selectors";
+
 
 class Content extends Component {
   render() {
@@ -144,4 +146,4 @@ class Content extends Component {
   }
 }
 
-export default withRouter(connect(getUserState, signOut)(Content));
+export default withRouter(connect(getUserState, null)(Content));
