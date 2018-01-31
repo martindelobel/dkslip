@@ -11,6 +11,7 @@ class Header extends Component {
     return(
       <div className="Header-wrap">
         <div className="header-content">
+        <div className="header-bg"></div>
           <div className="Navbar-content">
             <div className="Logo">
               <p className="dk-text">DK</p><img className="logo-image" src={logo}></img><p className="slip-text">SLIP</p>

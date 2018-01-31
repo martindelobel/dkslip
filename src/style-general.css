@@ -19,11 +19,19 @@ body, html {
 }
 /* START HEADER */
 .Header-wrap {
-  height: 75vh;
+  height: 100vh;
   width: 100vw;
+}
+.header-bg {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -999;
   background-position: center;
   background-size: cover;
   animation: sliderAnimation 20s infinite;
+  transform: skewY(-3deg);
+  transform-origin: top left;
 }
 
 
@@ -158,30 +166,40 @@ body, html {
 
    .item-button-zone button {
      color: #FFF;
-     background-color: rgba(204, 51, 0, 1);
+     background-color: rgba(60, 101, 133, 0.8);
      border-style: none;
      border-radius: 5px;
      font-size: 12pt;
      height: 5vh;
    }
    .item-button-zone button:hover {
-     color: rgba(204, 51, 0, 1);
+     color: rgba(60, 101, 133, 1);
      background-color: rgba(255, 255, 255, 1);
      border-radius: 5px;
      opacity: 1;
-     border: solid 1px rgba(204, 51, 0, 1);
+     border: solid 1px rgba(60, 101, 133, 1);
      height: 5vh;
+     outline: none;
    }
    /* END ITEM SETTINGS*/
 
 
   /* START REVIEWS SETTINGS */
   .Reviews-test{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    height: 10vh;
+    color:#FCFCFC;
+    text-align: center;
+  }
+  .review-bg {
+    height: 20vh;
+    position: absolute;
+    width: 100vw;
     background-color: #2E2E2E;
-   height: 40%;
-   color:#FCFCFC;
-   padding: 20px;
-   text-align: center;
+    transform: skewY(-3deg);
+    transform-origin: top left;
+    z-index: -999;
   }
 
   /* END REVIEWS SETTINGS */
@@ -205,15 +223,24 @@ body, html {
 
 /* START FOOTER  */
 .footer-wrap {
-  color: #F9F9F9;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
   background-color: #2E2E2E;
+  color: #F9F9F9;
+  margin-top: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-right: 2vw;
+}
+
+.footer-bg {
+  height: 25vh;
+  position: absolute;
+  width: 100vw;
+  background-size: cover;
+  background-color: #2E2E2E;
+  transform: skewY(-3deg);
+  transform-origin: top left;
+  z-index: -999;
 }
 
 .footer-middle {

@@ -53,6 +53,7 @@ class Content extends Component {
           </div>
         </div>
         <div className="Reviews-test">
+        <div className="review-bg"></div>
           <h3>"Good retention to there underpants"</h3>
           <p>John Doe, <i>12/12/2017</i></p>
         </div>
