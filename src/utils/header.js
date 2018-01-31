@@ -20,11 +20,13 @@ class Header extends Component {
               <p className="slip-text">SLIP</p>
             </div>
             <div className="Item-Navbar">
+              <a href="/">
                 <div className="item-menu">Home</div>
-                <div className="item-menu">Catalog
-                  <div className="subitem-menu">
-                    <Catalog />
-                  </div>
+              </a>
+              <div className="item-menu">
+                Catalog
+                <div className="subitem-menu">
+                  <Catalog />
                 </div>
               </div>
               <div className="item-menu">
@@ -59,6 +61,7 @@ class Header extends Component {
             ) : null}
           </div>
         </div>
+      </div>
     );
   }
 }

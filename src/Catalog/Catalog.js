@@ -38,7 +38,7 @@ class Catalog extends Component {
       <div>
         <ul>
           {slippedCat.map(cat => (
-            <li key={cat.id}>
+            <li className="subitem-link"key={cat.id}>
               <NavLink
                 key={cat.id}
                 to={`/category/${cat.id}`}
