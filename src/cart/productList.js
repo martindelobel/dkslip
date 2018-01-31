@@ -6,9 +6,11 @@ import { cartAction } from "../store/cart/actions.js";
 
 
 class ProductList extends Component {
-  componentDidMount() {
-    this.props.pushCart()
-  }
+
+  // componentDidMount(){
+  //   this.props.pushCart([{id:"toto",quantity:3}]);
+  // }
+
   render() {
     return (
     <div>

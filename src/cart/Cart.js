@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../style-general.css';
 import { connect } from "react-redux";
-import { catalogActions } from "../store/catalog/actions.js";
-import { displayCatalog } from "../store/catalog/selectors.js";
 import { cartAction } from "../store/cart/actions.js";
 import { displayCart } from "../store/cart/selectors.js";
 import ProductList from "./productList.js";
