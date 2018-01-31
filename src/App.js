@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect, Route, Switch, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 import './style-general.css';
 import Header from './utils/header';
 import Footer from './utils/footer';
@@ -15,10 +17,9 @@ class App extends Component {
         <Cart />
         <Content />
         <Footer />
-        <Catalog />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(connect(null)(App));

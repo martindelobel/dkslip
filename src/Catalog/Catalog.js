@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { NavLink, Route } from "react-router-dom";
 import { catalogActions } from "../store/catalog/actions.js";
 import { displayCatalog } from "../store/catalog/selectors.js";
 
@@ -38,8 +39,14 @@ class Catalog extends Component {
     return (
       <div>
         {slippedCat.map(cat => (
-          <ul key={cat.id} >
-            <li>{cat.label}</li>
+          <ul>
+            <li>
+              <NavLink
+                key={cat.id}
+                to={`${this.props.match.url}/category/${cat.id}`}
+              />
+              {cat.label}
+            </li>
           </ul>
         ))}
       </div>
