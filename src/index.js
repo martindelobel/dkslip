@@ -5,6 +5,7 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import store from "./store/store";
 import { Provider } from "react-redux";
+import "./utils/google_connect"; // initialize global function
 
 ReactDOM.render(
   <Provider store={store}>

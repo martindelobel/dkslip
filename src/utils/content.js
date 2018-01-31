@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import { signOut } from "../store/user/actions";
+import { getUserState } from "../store/user/selectors";
 
 class Content extends Component {
   render(){
@@ -50,6 +53,7 @@ class Content extends Component {
           </div>
         </div>
         <div className="Reviews-test">
+        <div className="review-bg"></div>
           <h3>"Good retention to there underpants"</h3>
           <p>John Doe, <i>12/12/2017</i></p>
         </div>
@@ -104,4 +108,4 @@ class Content extends Component {
 }
 
 
-export default Content;
+export default connect(getUserState, signOut)(Content);

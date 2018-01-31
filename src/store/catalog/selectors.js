@@ -1,7 +1,7 @@
 export function displayCatalog(state) {
   return {
     catalog: {
-      catList: state.catList
+      catList: state.catalogReducer.catList
     }
   };
 }

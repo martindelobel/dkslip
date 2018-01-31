@@ -4,6 +4,7 @@ class Footer extends Component {
   render(){
     return(
       <div className="footer-wrap">
+      <div className="footer-bg"></div>
         <div className="footer-left">
           <ul>
             <li className="visible">Home</li>
