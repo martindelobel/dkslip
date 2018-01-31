@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { NavLink, Route } from "react-router-dom";
 import { catalogActions } from "../store/catalog/actions.js";
 import { displayCatalog } from "../store/catalog/selectors.js";
 
@@ -22,26 +23,31 @@ const slipCategories = [
 ];
 
 class Catalog extends Component {
-
   componentDidMount() {
     this.props.getCatalog();
   }
 
-
-
-
   render() {
+    console.log(this.props);
+
     const slippedCat = this.props.catalog.catList.filter(cat =>
       slipCategories.includes(cat.id)
     );
 
     return (
       <div>
-        {slippedCat.map(cat => (
-          <ul key={cat.id} >
-            <li>{cat.label}</li>
-          </ul>
-        ))}
+        <ul>
+          {slippedCat.map(cat => (
+            <li key={cat.id}>
+              <NavLink
+                key={cat.id}
+                to={`/category/${cat.id}`}
+              >
+                {cat.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }

@@ -1,6 +1,5 @@
 const initialState = {
   catList: [],
-  productList: []
 };
 
 export default function catalogReducer(state = initialState, action) {
