@@ -1,13 +1,11 @@
-const initialState= {
-  productList:[{id : 777, quantity:1}],
-};
+const initialState = [{id:"toto",quantity:3}];
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type){
     case "PUSH" :
       return {
         ...state,
-        productList : [{id : 777, quantity:1}]
+        productList : [action.data]
       };
     case "ADD_PRODUCTS" :
       return {

@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { signOut } from "../store/user/actions";
-import { getUserState } from "../store/user/selectors";
+import { cartAction} from "../store/cart/actions";
+import { displayCart } from "../store/cart/selectors";
 import Category from "../Catalog/Category";
 import Product from "../Catalog/Product";
 import Cart from "../cart/Cart";
+import { getUserState } from "../store/user/selectors";
+
 
 class Content extends Component {
   render() {
@@ -29,7 +31,7 @@ class Content extends Component {
                 </p>
                 <p className="price">9,99€</p>
                 <div className="item-button-zone">
-                  <button>Add to cart</button>
+                  <button onClick={this.props.addToCart}>Add to cart TEST</button>
                   <button>View details</button>
                 </div>
               </div>
@@ -144,4 +146,4 @@ class Content extends Component {
   }
 }
 
-export default withRouter(connect(getUserState, signOut)(Content));
+export default withRouter(connect(getUserState, null)(Content));
