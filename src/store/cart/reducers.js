@@ -1,6 +1,8 @@
-const initialState= {
-  productList:[{id : 777, quantity:1}],
-};
+const initialState = localStorage.getItem("productList")
+  ? {productList : JSON.parse(localStorage.getItem("productList"))}
+  : {productList : [{id : 777, quantity:1}]};
+
+
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type){

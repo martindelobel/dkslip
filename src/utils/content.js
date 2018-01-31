@@ -29,7 +29,7 @@ class Content extends Component {
                 </p>
                 <p className="price">9,99€</p>
                 <div className="item-button-zone">
-                  <button>Add to cart</button>
+                  <button onClick={this.props.addToCart}>Add to cart TEST</button>
                   <button>View details</button>
                 </div>
               </div>
