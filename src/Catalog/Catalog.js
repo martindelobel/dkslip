@@ -38,8 +38,8 @@ class Catalog extends Component {
     return (
       <div>
         {slippedCat.map(cat => (
-          <ul key={cat.id}>
-            <li><a href="#" onClick={() => this.handleClick(cat.id)}>{cat.label}</a></li>
+          <ul key={cat.id} >
+            <li>{cat.label}</li>
           </ul>
         ))}
       </div>

@@ -70,23 +70,6 @@ body, html {
     font-size: 2vw;
   }
 
-  .Navbar-content .First-level {
-    color: #FFF;
-    text-transform: uppercase;
-    list-style: none;
-    display: block;
-    float: right;
-    position: relative;
-  }
-
-  .Navbar-content .Second-level {
-    color: #FFF;
-    text-transform: uppercase;
-    list-style: none;
-    display: block;
-    float: right;
-    position: relative;
-  }
 
 
   .Navbar-content li:last-child{
@@ -104,15 +87,26 @@ body, html {
     flex-direction: row;
     justify-content: space-between;
   }
+  .item-menu:hover .subitem-menu {
+    display: block;
+  }
+  .subitem-menu {
+    display: none;
+    z-index: 999;
+    position: absolute;
+  }
+  .subitem-menu ul {
+    list-style: none;
+    color: #FFF;
+  }
+  .subitem-menu-list{
+    text-decoration: none;
+    color: #FFF;
+  }
   .Item-Navbar .item-menu {
     color: #FFF;
     text-transform: uppercase;
     font-size: 1.2vw;
-  }
-  .Navbar-content .item-menu:hover {
-    color: red;
-    transition: color 1s;
-    cursor: copy;
   }
   .title-slider{
     text-align: center;

@@ -4,6 +4,7 @@ import logo from './logo.png';
 import { connect } from "react-redux";
 import { signOut } from "../store/user/actions";
 import { getUserState } from "../store/user/selectors";
+import Catalog from '../Catalog/Catalog';
 
 
 class Header extends Component {
@@ -17,8 +18,12 @@ class Header extends Component {
               <p className="dk-text">DK</p><img className="logo-image" src={logo}></img><p className="slip-text">SLIP</p>
             </div>
             <div className="Item-Navbar">
-                <span className="item-menu">Home</span>
-                <span className="item-menu">Catalog</span>
+                <div className="item-menu">Home</div>
+                <div className="item-menu">Catalog
+                  <div className="subitem-menu">
+                    <Catalog />
+                  </div>
+                </div>
                 <div className="google-connection">
               {this.props.user.id ? (
                   <div className="signout item-menu" onClick={this.props.signOut}>
