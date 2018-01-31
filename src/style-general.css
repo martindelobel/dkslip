@@ -101,15 +101,15 @@ body, html {
     line-height: 50vh;
   }
   .item-menu:hover .subitem-menu {
-    animation: subitem-animation 1s ease-in-out;
+    display: block;
   }
 
   .subitem-menu {
+    display: none;
     margin-top: 0.5vh;
     width: 20vw;
     position: absolute;
     background-color: rgba(60, 80, 100, 1);
-    animation: subitem-animation-back 1.5s ease-in-out forwards;
   }
 
   @keyframes subitem-animation {
