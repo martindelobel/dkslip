@@ -142,4 +142,4 @@ class Content extends Component {
   }
 }
 
-export default connect(getUserState, signOut)(Content);
+export default withRouter(connect(getUserState, signOut)(Content));
