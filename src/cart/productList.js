@@ -6,10 +6,15 @@ import { cartAction } from "../store/cart/actions.js";
 
 
 class ProductList extends Component {
+  componentDidMount() {
+    this.props.pushCart()
+  }
   render() {
     return (
     <div>
+
     {this.props.cart.productList.map((product) => (
+
       <div className="cart-content">
           <div className="picture-item">
             <p> {product.image} </p>
