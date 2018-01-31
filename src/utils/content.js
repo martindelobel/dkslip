@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Redirect, Route, Switch, withRouter } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { signOut } from "../store/user/actions";
 import { getUserState } from "../store/user/selectors";
 import Category from "../Catalog/Category";
 import Product from "../Catalog/Product";
+import Cart from "../cart/Cart";
 
 class Content extends Component {
   render() {
@@ -13,6 +14,7 @@ class Content extends Component {
         <Switch>
           <Route path="/category/:idCategory" component={Category} />
           <Route path="/product/:id" component={Product} />
+          <Route path="/cart" component={Cart} />
         </Switch>
         <div className="content-wrap">
           <div className="best-sellers-items">

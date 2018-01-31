@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { signOut } from "../store/user/actions";
 import { getUserState } from "../store/user/selectors";
 import Catalog from "../Catalog/Catalog";
+import { NavLink, withRouter } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -27,6 +28,12 @@ class Header extends Component {
                 <div className="subitem-menu">
                   <Catalog />
                 </div>
+              </div>
+              <div className="item-menu">
+
+                <NavLink to={`/cart`}>
+                  cart
+                  </NavLink>
               </div>
               <div className="google-connection">
                 {this.props.user.id ? (
@@ -59,4 +66,4 @@ class Header extends Component {
   }
 }
 
-export default connect(getUserState, signOut)(Header);
+export default withRouter(connect(getUserState, signOut)(Header));
