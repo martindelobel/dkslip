@@ -61,6 +61,7 @@ body, html {
     flex-direction: row;
     margin-left: 5vw;
   }
+
   .logo-image{
     width: 5vh;
     height: auto;
@@ -68,6 +69,30 @@ body, html {
   .dk-text {
     font-size: 2vw;
   }
+
+  .Navbar-content .First-level {
+    color: #FFF;
+    text-transform: uppercase;
+    list-style: none;
+    display: block;
+    float: right;
+    position: relative;
+  }
+
+  .Navbar-content .Second-level {
+    color: #FFF;
+    text-transform: uppercase;
+    list-style: none;
+    display: block;
+    float: right;
+    position: relative;
+  }
+
+
+  .Navbar-content li:last-child{
+    margin-right: 4vw;
+  }
+
   .slip-text{
     padding-top: 4vh;
     font-size: 1.5vw;

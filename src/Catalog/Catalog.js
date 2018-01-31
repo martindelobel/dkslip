@@ -22,9 +22,13 @@ const slipCategories = [
 ];
 
 class Catalog extends Component {
+
   componentDidMount() {
     this.props.getCatalog();
   }
+
+
+
 
   render() {
     const slippedCat = this.props.catalog.catList.filter(cat =>
@@ -35,7 +39,7 @@ class Catalog extends Component {
       <div>
         {slippedCat.map(cat => (
           <ul key={cat.id}>
-            <li>{cat.label}</li>
+            <li><a href="#" onClick={() => this.handleClick(cat.id)}>{cat.label}</a></li>
           </ul>
         ))}
       </div>
