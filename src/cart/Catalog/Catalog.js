@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { catalogActions } from "../store/catalog/actions.js";
-import { displayCatalog } from "../store/catalog/selectors.js";
+import { catalogActions } from "../../store/catalog/actions.js";
+import { displayCatalog } from "../../store/catalog/selectors.js";
 
 const slipCategories = [
   "b2342ec8-17e9-45b5-8286-db9a607ff33b",
@@ -23,6 +22,7 @@ const slipCategories = [
 ];
 
 class Catalog extends Component {
+
   componentDidMount() {
     this.props.getCatalog();
   }

@@ -22,11 +22,12 @@ class Header extends Component {
             <div className="Item-Navbar">
               <a href="/">
                 <div className="item-menu">Home</div>
-              </a>
-              <div className="item-menu">
-                Catalog
-                <div className="subitem-menu">
-                  <Catalog />
+                <div className="item-menu">Catalog
+                  <div className="subitem-menu">
+                    <div className="subitem-bg"></div>
+                    <div className="subitem-bg-2"></div>
+                    <Catalog />
+                  </div>
                 </div>
               </div>
               <div className="item-menu">
