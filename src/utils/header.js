@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { signOut } from "../store/user/actions";
 import { getUserState } from "../store/user/selectors";
 import Catalog from "../Catalog/Catalog";
-import Cart from "../cart/Cart";
 import { NavLink, withRouter } from "react-router-dom";
 
 class Header extends Component {

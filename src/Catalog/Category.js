@@ -28,7 +28,7 @@ class Category extends Component {
               >
                 {products.title}
               </NavLink>
-            <img  src={"https://www.decathlon.fr/media/" + products.image_path}/></li>
+            <img  src={"https://www.decathlon.fr/media/" + products.image_path} alt={products.description}/></li>
             ))}
           </ul>
         </div>

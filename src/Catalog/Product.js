@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { productAction } from "../store/product/actions.js";
 import { displayProduct } from "../store/product/selectors.js";
@@ -25,7 +24,7 @@ class Product extends Component {
                     "https://www.decathlon.fr/media/" +
                     this.props.product.product.image_path
                   }
-                />
+                alt={this.props.product.product.description}/>
                 <p>{this.props.product.product.description}</p>
                 <p className="price">{this.props.product.product.min_price}€</p>
               </div>
