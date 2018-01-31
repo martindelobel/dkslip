@@ -15,7 +15,7 @@ class ProductList extends Component {
 
     {this.props.cart.productList.map((product) => (
 
-      <div className="cart-content">
+      <div className="cart-content" key={product.id}>
           <div className="picture-item">
             <p> {product.image} </p>
           </div>

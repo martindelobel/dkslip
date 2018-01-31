@@ -38,10 +38,10 @@ class Catalog extends Component {
       <div>
         <ul>
           {slippedCat.map(cat => (
-            <li>
+            <li key={cat.id}>
               <NavLink
                 key={cat.id}
-                to={`${this.props.match.url}/category/${cat.id}`}
+                to={`/category/${cat.id}`}
               >
                 {cat.label}
               </NavLink>

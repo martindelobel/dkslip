@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
-class Categories extends Component {
+class Category extends Component {
   render() {
     return (
       <div className="Categories">
@@ -12,4 +12,4 @@ class Categories extends Component {
   }
 }
 
-export default connect(null, null)(Categories);
+export default connect(null, null)(Category);
