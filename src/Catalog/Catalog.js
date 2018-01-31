@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { catalogActions } from "../store/catalog/actions.js";
 import { displayCatalog } from "../store/catalog/selectors.js";
 
