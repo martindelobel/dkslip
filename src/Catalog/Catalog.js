@@ -23,32 +23,31 @@ const slipCategories = [
 ];
 
 class Catalog extends Component {
-
   componentDidMount() {
     this.props.getCatalog();
   }
 
-
-
-
   render() {
+    console.log(this.props);
+
     const slippedCat = this.props.catalog.catList.filter(cat =>
       slipCategories.includes(cat.id)
     );
 
     return (
       <div>
-        {slippedCat.map(cat => (
-          <ul>
+        <ul>
+          {slippedCat.map(cat => (
             <li>
               <NavLink
                 key={cat.id}
                 to={`${this.props.match.url}/category/${cat.id}`}
-              />
-              {cat.label}
+              >
+                {cat.label}
+              </NavLink>
             </li>
-          </ul>
-        ))}
+          ))}
+        </ul>
       </div>
     );
   }

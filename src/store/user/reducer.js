@@ -8,7 +8,6 @@ const initialState = {
 };
 
 export default function userReducer(state = initialState, action) {
-  console.log(action);
   switch (action.type) {
     case "LOGGED_IN":
       return {
