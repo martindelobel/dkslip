@@ -101,31 +101,43 @@ body, html {
     line-height: 50vh;
   }
   .item-menu:hover .subitem-menu {
-    display: block;
+    animation: subitem-animation 1s ease-in-out;
   }
+
   .subitem-menu {
-    display: none;
-    z-index: 999;
-    margin-top: 2vh;
+    margin-top: 0.5vh;
     width: 20vw;
     position: absolute;
-    background-color: rgba(33, 33, 33, 0.9);
+    background-color: rgba(60, 80, 100, 1);
+    animation: subitem-animation-back 1.5s ease-in-out forwards;
+  }
+
+  @keyframes subitem-animation {
+    0%{transform: translateY(-100%); z-index: -999;}
+    75%{transform: translateY(10%); z-index: -999;}
+    100%{transform: translateY(0%); z-index: 999; display:block;}
+  }
+  @keyframes subitem-animation-back {
+    0%{transform: translateY(0%); z-index: 999;}
+    0%{display: block;}
+    50%{transform: translateY(10%); z-index: -999;}
+    100%{transform: translateY(-150%); z-index: -999;}
   }
 
   .subitem-bg {
-    height: 95vh;
+    height: 1vh;
     width: 100%;
     position: absolute;
-    background-color: rgba(60, 101, 133, 0.3);
+    background-color: rgba(60, 101, 133, 1);
     transform: skewY(-3deg);
     transform-origin: top left;
     z-index: -999;
   }
   .subitem-bg-2 {
-    height: 95vh;
+    height: 1vh;
     width: 100%;
     position: absolute;
-    background-color: rgba(60, 101, 133, 0.6);
+    background-color: rgba(60, 101, 133, 1);
     transform: skewY(-1.5deg);
     transform-origin: top left;
     z-index: -999;

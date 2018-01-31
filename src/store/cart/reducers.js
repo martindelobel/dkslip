@@ -1,5 +1,6 @@
 const initialState = { productList: [] };
 
+
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
     case "PUSH":
