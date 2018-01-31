@@ -1,5 +1,3 @@
-
-import catalogReducer from "./catalog/reducers";
 import logger from "redux-logger";
 import thunk from "redux-thunk";
 import { createStore, combineReducers, applyMiddleware } from "redux";
