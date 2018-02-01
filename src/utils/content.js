@@ -10,6 +10,7 @@ import Home from "./home.js";
 import Stripe from "../utils/stripe";
 import Success from "../utils/payment_success";
 import Failed from "../utils/payment_failed";
+import Home from "./home.js";
 
 
 class Content extends Component {
