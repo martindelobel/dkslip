@@ -9,6 +9,8 @@ import DeliveryAddressConfirmation from "../cart/DeliveryAddressConfirmation";
 
 
 
+
+
 class Content extends Component {
   render() {
     return (
@@ -83,6 +85,8 @@ class Content extends Component {
             <p>
               John Doe, <i>12/12/2017</i>
             </p>
+          </div>
+          <div className="trouducul" style={{background:"#000"}}>
           </div>
           <div className="news-items-test">
             <h3 className="best-sellers-title"> Best Sellers </h3>
