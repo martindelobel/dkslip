@@ -22,15 +22,34 @@ class Category extends Component {
         <div className="item-content">
           <ul>
             {this.props.category.productList.map(products => (
-              <li key={products.id}>
-              <NavLink
-                key={products.id}
-                to={`/product/${products.id}`}
-              >
-                {products.title}
-
-              </NavLink>
-            <img  src={"https://www.decathlon.fr/media/" + products.image_path} alt={products.description}/></li>
+              <li>
+                <NavLink
+                  style={{ textDecoration: 'none' }}
+                  key={products.id}
+                  to={`/product/${products.id}`}
+                >
+                <h4>{products.title}</h4>
+                </NavLink>
+                <p className="price-item">{products.min_price}€</p>
+                <img  src={"https://www.decathlon.fr/media/" + products.image_path} alt={products.description}/>
+                <p className="rating-jauge">
+                  <div className="jauge">
+                    <div style={{width: products.rating * 20 + "%"}}></div>
+                  </div>
+                </p>
+                <p style={{height:"50vh"}}>{products.description}</p>
+                <p><i className="fas fa-check-circle" style={{color:'green'}}></i> stock</p>
+                <div className="item-button-zone">
+                  <button>Add to cart</button>
+                  <NavLink
+                    style={{ textDecoration: 'none' }}
+                    key={products.id}
+                    to={`/product/${products.id}`}
+                  >
+                    <button>View details</button>
+                  </NavLink>
+                </div>
+              </li>
             ))}
           </ul>
 

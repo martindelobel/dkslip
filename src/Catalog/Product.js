@@ -12,36 +12,40 @@ class Product extends Component {
   render() {
     return (
       <div className="Product">
-        <div className="content-wrap">
-          <div className="best-sellers-items">
-            <h3 className="best-sellers-title" />
-            <div className="best-sellers-row">
-              <div className="item-content">
+              <div className="product-single-header">
                 <span className="title-item">
                   {this.props.product.product.title}
                 </span>
-                <img
-                  src={
-                    "https://www.decathlon.fr/media/" +
-                    this.props.product.product.image_path
-                  }
-                  alt={this.props.product.product.description}
-                />
-                <p>{this.props.product.product.description}</p>
-                <p className="price">{this.props.product.product.min_price}€</p>
+                <div className="separator-title-item"></div>
               </div>
-              <div className="item-button-zone">
-                <button
-                  onClick={() => this.props.actions.cartAction.increment(
-                    this.props.product.product.id
-                  )}
-                >
-                  Add to cart
-                </button>
+              <div className="product-info-content">
+                <div className="product-left-info-part">
+                  <img
+                    src={
+                      "https://www.decathlon.fr/media/" +
+                      this.props.product.product.image_path
+                    }
+                  alt={this.props.product.product.description}/>
+                </div>
+                <div className="product-right-info-part">
+                  <p>{this.props.product.product.description}</p>
+                  <p className="rating-jauge">
+                    <div className="jauge">
+                      <div style={{width: this.props.product.product.rating * 20 + "%"}}></div>
+                    </div>
+                  </p>
+                  <p><i className="fas fa-check-circle" style={{color:'green'}}></i> stock</p>
+                  <p className="price">{this.props.product.product.min_price}€</p>
+                  <div className="item-button-zone">
+                    <button
+                    onClick={() => this.props.actions.cartAction.increment(
+                      this.props.product.product.id
+                    )}
+                    >Add to cart
+                    </button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
       </div>
     );
   }

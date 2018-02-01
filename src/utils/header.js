@@ -16,13 +16,13 @@ class Header extends Component {
           <div className="Navbar-content">
             <div className="Logo">
               <p className="dk-text">DK</p>
-              <img className="logo-image" src={logo} />
+              <img className="logo-image" src={logo} alt="logo underpants" />
               <p className="slip-text">SLIP</p>
             </div>
             <div className="Item-Navbar">
-              <a href="/">
-                <div className="item-menu">Home</div>
-              </a>
+
+                <div className="item-menu"><a href="/">Home</a></div>
+
               <div className="item-menu">
                 Catalog
                 <div className="subitem-menu">
