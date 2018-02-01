@@ -6,6 +6,9 @@ import Product from "../Catalog/Product";
 import Cart from "../cart/Cart";
 import { getUserState } from "../store/user/selectors";
 import DeliveryAddressConfirmation from "../cart/DeliveryAddressConfirmation";
+import Stripe from "../utils/stripe";
+import Success from "../utils/payment_success";
+import Failed from "../utils/payment_failed";
 
 
 
@@ -18,6 +21,10 @@ class Content extends Component {
           <Route path="/product/:id" component={Product} />
           <Route path="/cart" component={Cart} />
           <Route path="/DeliveryAddressConfirmation" component={DeliveryAddressConfirmation}/>
+          <Route path="/payment" component={Stripe}/>
+          <Route path="/Success" component={Success}/>
+          <Route path="/Failed" component={Failed}/>
+
         </Switch>
         <div className="content-wrap">
           <div className="best-sellers-items">
