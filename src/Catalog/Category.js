@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { categoryAction } from "../store/category/actions.js";
+import { cartAction } from "../store/cart/actions.js";
 import { displayProductsList } from "../store/category/selectors.js";
+import { productAction } from "../store/product/actions.js";
 
 class Category extends Component {
   componentDidMount() {
@@ -15,7 +17,6 @@ class Category extends Component {
       this.props.getProducts(this.props.match.params.idCategory);
     }
   }
-
   render() {
     return (
       <div className="Categories">
@@ -40,7 +41,11 @@ class Category extends Component {
                 <p style={{height:"50vh"}}>{products.description}</p>
                 <p><i className="fas fa-check-circle" style={{color:'green'}}></i> stock</p>
                 <div className="item-button-zone">
-                  <button>Add to cart</button>
+                  <button
+                  onClick={() => this.props.actions.cartAction.increment(
+                    this.props.product.product.id
+                  )}
+                  >Add to cart</button>
                   <NavLink
                     style={{ textDecoration: 'none' }}
                     key={products.id}
@@ -59,6 +64,13 @@ class Category extends Component {
       </div>
     );
   }
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      cartAction: cartAction(dispatch)
+    }
+  };
 }
 
 export default connect(displayProductsList, categoryAction)(Category);
