@@ -5,16 +5,16 @@ import { categoryAction } from "../store/category/actions.js";
 import { cartAction } from "../store/cart/actions.js";
 import { displayProductsList } from "../store/category/selectors.js";
 import { productAction } from "../store/product/actions.js";
+import { displayProduct } from "../store/product/selectors.js";
 
 class Category extends Component {
   componentDidMount() {
-    this.props.getProducts(this.props.match.params.idCategory);
+    this.props.actions.categoryAction.getProducts(this.props.match.params.idCategory);
   }
   componentDidUpdate(prevProps) {
-    if (
-      this.props.match.params.idCategory !== prevProps.match.params.idCategory
-    ) {
-      this.props.getProducts(this.props.match.params.idCategory);
+    if (this.props.match.params.idCategory !== prevProps.match.params.idCategory)
+    {
+      this.props.actions.categoryAction.getProducts(this.props.match.params.idCategory);
     }
   }
   render() {
@@ -24,15 +24,9 @@ class Category extends Component {
           <ul>
             {this.props.category.productList.map(products => (
               <li>
-                <NavLink
-                  style={{ textDecoration: 'none' }}
-                  key={products.id}
-                  to={`/product/${products.id}`}
-                >
                 <h4>{products.title}</h4>
-                </NavLink>
                 <p className="price-item">{products.min_price}€</p>
-                <img  src={"https://www.decathlon.fr/media/" + products.image_path} alt={products.description}/>
+                <img  src={"https://www.decathlon.fr/media/" + products.image_path} alt={products.description}></img>
                 <p className="rating-jauge">
                   <div className="jauge">
                     <div style={{width: products.rating * 20 + "%"}}></div>
@@ -43,7 +37,7 @@ class Category extends Component {
                 <div className="item-button-zone">
                   <button
                   onClick={() => this.props.actions.cartAction.increment(
-                    this.props.product.product.id
+                    products.id
                   )}
                   >Add to cart</button>
                   <NavLink
@@ -68,9 +62,11 @@ class Category extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      cartAction: cartAction(dispatch)
+      categoryAction: categoryAction(dispatch),
+      cartAction: cartAction(dispatch),
+      productAction: productAction(dispatch)
     }
   };
 }
 
-export default connect(displayProductsList, categoryAction)(Category);
+export default connect(displayProductsList, mapDispatchToProps)(Category);

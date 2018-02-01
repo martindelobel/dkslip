@@ -4,13 +4,19 @@ import { connect } from "react-redux";
 import { displayCart } from "../store/cart/selectors";
 import { displayProduct } from "../store/product/selectors";
 import { cartAction } from "../store/cart/actions.js";
+import { productAction } from "../store/product/actions.js";
+
 
 class ProductList extends Component {
   render() {
     console.log(this.props.cart.productList);
     return (
       <div>
-        {this.props.cart.productList.map(product => (
+        {this.props.cart.productList.map(product => {
+          if (!this.props.product.product.title){
+            this.props.actions.productAction.getProduct(product.id)
+          }
+          return (
           <div className="cart-content" key={product.id}>
             <div className="picture-item">
               <img
@@ -45,7 +51,8 @@ class ProductList extends Component {
               <p> {product.quantity * this.props.product.product.min_price} </p>
             </div>
           </div>
-        ))}
+        )}
+      )}
         <div className="Cart-Total">Total de la commande : 99Fr</div>
       </div>
     );
@@ -62,4 +69,14 @@ function mapStateToProps(state) {
     }
   };
 }
-export default connect(mapStateToProps, cartAction)(ProductList);
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      productAction: productAction(dispatch),
+      cartAction: cartAction(dispatch)
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);
