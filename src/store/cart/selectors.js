@@ -1,7 +1,7 @@
-export function displayCart(state){
+export function displayCart(state) {
   return {
-    cart:{
-      productList : state.cartReducer
+    cart: {
+      productList: state.cartReducer.productList
     }
-  }
+  };
 }
