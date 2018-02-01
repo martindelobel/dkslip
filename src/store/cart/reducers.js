@@ -13,22 +13,16 @@ export default function cartReducer(state = initialState, action) {
         productList: [action.data]
       };
     case "ADD":
-      const arrayFiltered = state.productList.filter(
+      const productToUpdate = state.productList.filter(
         product => product.id === action.data
       );
-      if (arrayFiltered.length > 0 && action.data === arrayFiltered[0].id) {
-        console.log("l'article est deja dans le panier");
-        const productToUpdate = state.productList.filter(
-          product => product.id === action.data
-        );
-        const indexToUpdate = state.productList.indexOf(productToUpdate[0]);
+      if (productToUpdate.length > 0 && action.data === productToUpdate[0].id) {
+        const indexToUpdateInCart = state.productList.indexOf(productToUpdate[0]);
         const quantityUpdated = state.productList.slice();
-
-        quantityUpdated.splice(indexToUpdate, 1, {
+        quantityUpdated.splice(indexToUpdateInCart, 1, {
           id: action.data,
-          quantity: state.productList[indexToUpdate].quantity + 1
+          quantity: state.productList[indexToUpdateInCart].quantity + 1
         });
-
         return {
           ...state,
           productList: quantityUpdated
