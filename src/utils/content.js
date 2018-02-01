@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { cartAction} from "../store/cart/actions";
-import { displayCart } from "../store/cart/selectors";
 import Category from "../Catalog/Category";
 import Product from "../Catalog/Product";
 import Cart from "../cart/Cart";

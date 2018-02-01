@@ -1,7 +1,7 @@
 export function cartAction(dispatch) {
   return {
     pushCart: (product) => dispatch({type: "PUSH", data: product}),
-    increment: () => dispatch({type: "ADD"}),
+    increment: (product) => dispatch({type: "ADD", data: product}),
     decrement: () => dispatch({type: "SUB"}),
     delete: () => dispatch({type: "DELETE"}),
     addToCart: () => {

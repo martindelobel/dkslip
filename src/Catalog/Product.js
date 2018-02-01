@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { productAction } from "../store/product/actions.js";
+import { cartAction } from "../store/cart/actions.js";
 import { displayProduct } from "../store/product/selectors.js";
 
 class Product extends Component {
   componentDidMount() {
-    this.props.getProduct(this.props.match.params.id);
+    this.props.actions.productAction.getProduct(this.props.match.params.id);
   }
 
   render() {
@@ -24,12 +25,19 @@ class Product extends Component {
                     "https://www.decathlon.fr/media/" +
                     this.props.product.product.image_path
                   }
-                alt={this.props.product.product.description}/>
+                  alt={this.props.product.product.description}
+                />
                 <p>{this.props.product.product.description}</p>
                 <p className="price">{this.props.product.product.min_price}€</p>
               </div>
               <div className="item-button-zone">
-                <button>Add to cart</button>
+                <button
+                  onClick={() => this.props.actions.cartAction.increment(
+                    this.props.product.product.id
+                  )}
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>
@@ -39,4 +47,13 @@ class Product extends Component {
   }
 }
 
-export default connect(displayProduct, productAction)(Product);
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      productAction: productAction(dispatch),
+      cartAction: cartAction(dispatch)
+    }
+  };
+}
+
+export default connect(displayProduct, mapDispatchToProps)(Product);
