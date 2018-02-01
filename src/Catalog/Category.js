@@ -81,8 +81,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-<<<<<<< HEAD
 export default connect(mapStateToProps, mapDispatchToProps)(Category);
-=======
-export default connect(displayProductsList, mapDispatchToProps)(Category);
->>>>>>> update design and fix conflicts to add cart by catalog
