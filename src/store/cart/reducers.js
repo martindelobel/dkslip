@@ -13,26 +13,25 @@ export default function cartReducer(state = initialState, action) {
         productList: [action.data]
       };
     case "ADD":
-      const productToUpdate = state.productList.filter(
+      const productToUpdate = state.productList.findIndex(
         product => product.id === action.data
       );
-      if (productToUpdate.length > 0 && action.data === productToUpdate[0].id) {
-        const indexToUpdateInCart = state.productList.indexOf(
-          productToUpdate[0]
-        );
+      if (productToUpdate >= 0) {
         const quantityUpdated = state.productList.slice();
-        quantityUpdated.splice(indexToUpdateInCart, 1, {
+        quantityUpdated.splice(productToUpdate, 1, {
           id: action.data,
-          quantity: state.productList[indexToUpdateInCart].quantity + 1
+          quantity: state.productList[productToUpdate].quantity + 1
         });
         return {
           ...state,
           productList: quantityUpdated
         };
       } else {
+        const tempArray = state.productList.slice();
+        tempArray.push({ id: action.data, quantity: 1 })
         return {
           ...state,
-          productList: [{ id: action.data, quantity: 1 }]
+          productList: tempArray
         };
       }
     case "SUB":
