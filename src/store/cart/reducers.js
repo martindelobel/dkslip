@@ -17,7 +17,9 @@ export default function cartReducer(state = initialState, action) {
         product => product.id === action.data
       );
       if (productToUpdate.length > 0 && action.data === productToUpdate[0].id) {
-        const indexToUpdateInCart = state.productList.indexOf(productToUpdate[0]);
+        const indexToUpdateInCart = state.productList.indexOf(
+          productToUpdate[0]
+        );
         const quantityUpdated = state.productList.slice();
         quantityUpdated.splice(indexToUpdateInCart, 1, {
           id: action.data,

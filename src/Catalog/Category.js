@@ -21,7 +21,7 @@ class Category extends Component {
         <div>
           <ul>
             {this.props.category.productList.map(products => (
-              <li>
+              <li key={products.id}>
               <NavLink
                 key={products.id}
                 to={`/product/${products.id}`}
