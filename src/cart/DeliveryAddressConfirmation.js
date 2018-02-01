@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { displayDeliveryAddress } from "../store/delivery/selectors";
-import { Field, reduxForm } from 'redux-form';
 import { deliveryAction } from "../store/delivery/actions"
 import Delivery from "./Delivery"
 
