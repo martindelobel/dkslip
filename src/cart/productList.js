@@ -6,9 +6,6 @@ import { displayProduct } from "../store/product/selectors";
 import { cartAction } from "../store/cart/actions.js";
 
 class ProductList extends Component {
-  // componentDidMount(){
-  //   this.props.pushCart([{id:"toto",quantity:3}]);
-  // }
   render() {
     console.log(this.props.cart.productList);
     return (
@@ -18,7 +15,11 @@ class ProductList extends Component {
             <div className="picture-item">
               <img
                 src={
-                  "https://www.decathlon.fr/media/" + this.props.product.product.image_path} alt={this.props.product.product.description}/>
+                  "https://www.decathlon.fr/media/" +
+                  this.props.product.product.image_path
+                }
+                alt={this.props.product.product.description}
+              />
             </div>
             <div className="name-item">
               <p> {this.props.product.product.title} </p>
@@ -51,13 +52,14 @@ class ProductList extends Component {
   }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
-      cart:{
-        productList : state.cartReducer.productList
-      },
+    cart: {
+      productList: state.cartReducer.productList
+    },
     product: {
       product: state.productReducer.product
-    }  }
+    }
+  };
 }
 export default connect(mapStateToProps, cartAction)(ProductList);
