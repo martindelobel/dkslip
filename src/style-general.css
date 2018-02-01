@@ -346,3 +346,14 @@ body, html {
     height: 25vh;
 }
 /* END FOOTER */
+
+/* start Delivery */
+.Delivery {
+  text-transform: uppercase;
+  font-weight: lighter;
+  list-style: none;
+  text-align: left;
+  display: block;
+  margin: auto;
+}
+/*End Delivery */
