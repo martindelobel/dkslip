@@ -7,10 +7,13 @@ import { cartAction } from "../store/cart/actions.js";
 
 class ProductList extends Component {
   render() {
+    let totalligne;
+    let total;
     console.log(this.props.cart.productList);
     return (
       <div>
         {this.props.cart.productList.map(product => (
+
           <div className="cart-content" key={product.id}>
             <div className="picture-item">
               <img
@@ -46,7 +49,7 @@ class ProductList extends Component {
             </div>
           </div>
         ))}
-        <div className="Cart-Total">Total de la commande : 99Fr</div>
+        <div className="Cart-Total">Total de la commande : EUR</div>
       </div>
     );
   }

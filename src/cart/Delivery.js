@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from 'redux-form';
+import { NavLink } from "react-router-dom";
 
 class Delivery extends Component {
   handleSubmit() {
@@ -11,18 +12,22 @@ class Delivery extends Component {
     return (
       <form onSubmit={this.props.handleSubmit}>
         <div>
-          <label>First Name</label>
-          <Field name="firstName" component="input" type="text"/>
+          <label>Address</label>
+          <Field name="Address" component="input" type="text"/>
         </div>
         <div>
-          <label>Last Name</label>
-          <Field name="lastName" component="input" type="text"/>
+          <label>ZipCode</label>
+          <Field name="zipcode" component="input" type="text"/>
         </div>
         <div>
-          <label>Email</label>
-          <Field name="email" component="input" type="email"/>
+          <label>City</label>
+          <Field name="city" component="input" type="text"/>
         </div>
-        <button type="submit">Submit</button>
+        <div>
+          <label>Country</label>
+          <Field name="country" component="input" type="text"/>
+        </div>
+        <button type="submit"><NavLink to={`/payment`}>Submit</NavLink></button>
       </form>
     );
   }
