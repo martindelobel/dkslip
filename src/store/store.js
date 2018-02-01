@@ -6,6 +6,9 @@ import cartReducer from "./cart/reducers";
 import userReducer from "./user/reducer";
 import categoryReducer from "./category/reducers";
 import productReducer from "./product/reducers";
+import { reducer as formReducer } from 'redux-form';
+import deliveryReducer from "./delivery/reducers";
+
 
 
 
@@ -15,7 +18,9 @@ let reducers = combineReducers(
     catalogReducer:catalogReducer,
     userReducer:userReducer,
     categoryReducer:categoryReducer,
-    productReducer:productReducer
+    productReducer:productReducer,
+    form: formReducer,
+    deliveryReducer:deliveryReducer
   }
 );
 

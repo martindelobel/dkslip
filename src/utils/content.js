@@ -5,6 +5,8 @@ import Category from "../Catalog/Category";
 import Product from "../Catalog/Product";
 import Cart from "../cart/Cart";
 import { getUserState } from "../store/user/selectors";
+import DeliveryAddressConfirmation from "../cart/DeliveryAddressConfirmation";
+
 
 
 class Content extends Component {
@@ -15,6 +17,7 @@ class Content extends Component {
           <Route path="/category/:idCategory" component={Category} />
           <Route path="/product/:id" component={Product} />
           <Route path="/cart" component={Cart} />
+          <Route path="/DeliveryAddressConfirmation" component={DeliveryAddressConfirmation}/>
         </Switch>
         <div className="content-wrap">
           <div className="best-sellers-items">
