@@ -13,22 +13,20 @@ class ProductList extends Component {
     return (
       <div>
         {this.props.cart.productList.map(product => {
-          if (!this.props.product.product.title){
-            this.props.actions.productAction.getProduct(product.id)
-          }
+          console.log(product.iteminfo.id);
           return (
-          <div className="cart-content" key={product.id}>
+          <div className="cart-content" key={product.iteminfo.id}>
             <div className="picture-item">
               <img
                 src={
                   "https://www.decathlon.fr/media/" +
-                  this.props.product.product.image_path
+                  product.iteminfo.image_path
                 }
-                alt={this.props.product.product.description}
+                alt={product.iteminfo.description}
               />
             </div>
             <div className="name-item">
-              <p> {this.props.product.product.title} </p>
+              <p> {product.iteminfo.title} </p>
             </div>
             <div className="quantity-item">
               <p>
@@ -45,13 +43,14 @@ class ProductList extends Component {
               </p>
             </div>
             <div className="price-by-item">
-              <p> {this.props.product.product.min_price} </p>
+              <p> {product.iteminfo.min_price} </p>
             </div>
             <div className="total-price">
-              <p> {product.quantity * this.props.product.product.min_price} </p>
+              <p> {product.quantity * product.iteminfo.min_price} </p>
             </div>
           </div>
-        )}
+        )
+        }
       )}
         <div className="Cart-Total">Total de la commande : 99Fr</div>
       </div>

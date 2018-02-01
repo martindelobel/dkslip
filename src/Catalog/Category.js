@@ -37,7 +37,7 @@ class Category extends Component {
                 <div className="item-button-zone">
                   <button
                   onClick={() => this.props.actions.cartAction.increment(
-                    products.id
+                    products
                   )}
                   >Add to cart</button>
                   <NavLink

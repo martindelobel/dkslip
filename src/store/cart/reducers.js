@@ -14,7 +14,7 @@ export default function cartReducer(state = initialState, action) {
       };
     case "ADD":
       const productToUpdate = state.productList.findIndex(
-        product => product.id === action.data
+        product => product.id === action.data.id
       );
       if (productToUpdate >= 0) {
         const quantityUpdated = state.productList.slice();
@@ -28,7 +28,7 @@ export default function cartReducer(state = initialState, action) {
         };
       } else {
         const tempArray = state.productList.slice();
-        tempArray.push({ id: action.data, quantity: 1 })
+        tempArray.push({ iteminfo: action.data, quantity: 1 })
         return {
           ...state,
           productList: tempArray

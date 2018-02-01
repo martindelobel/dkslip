@@ -103,7 +103,7 @@ line-height: 50vh;
 }
 .item-menu:hover .subitem-menu {
 display: block;
-animation: subitem-animation 1s ease-in-out;
+animation: subitem-animation 0.1s ease-in-out;
 }
 
 .subitem-menu {
