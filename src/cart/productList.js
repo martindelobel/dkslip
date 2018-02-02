@@ -9,7 +9,6 @@ import { productAction } from "../store/product/actions.js";
 
 class ProductList extends Component {
   render() {
-
     return (
       <div>
         {this.props.cart.productList.map(product => {
@@ -29,15 +28,28 @@ class ProductList extends Component {
             </div>
             <div className="quantity-item">
               <p>
-                <button className="update-quantity" onClick={()=>this.props.actions.cartAction.decrement(product.iteminfo)}> - </button>
+                <button className="update-quantity" onClick={()=>{
+                  this.props.actions.cartAction.decrement(product.iteminfo)
+                    .then(() =>
+                      localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
+                    )
+                }}> - </button>
                 <span>{product.quantity}</span>
-                <button className="update-quantity" onClick={()=>this.props.actions.cartAction.addQuantity(product.iteminfo)}> + </button>
+                <button className="update-quantity" onClick={() => {
+                  this.props.actions.cartAction.addQuantity(product.iteminfo)
+                    .then(() =>
+                      localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
+                    )
+                }}> + </button>
               </p>
             </div>
             <div className="delete-item">
               <p>
                 {" "}
-                <button onClick={this.props.actions.cartAction.delete}> Delete </button>
+                <button onClick={() => {
+                  this.props.actions.cartAction.delete()
+                    .then(() => localStorage.clear())
+                }}> Delete </button>
                 <span>{product.quantity}</span>{" "}
               </p>
             </div>
