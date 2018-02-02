@@ -9,7 +9,6 @@ import { productAction } from "../store/product/actions.js";
 
 class ProductList extends Component {
   render() {
-
     return (
       <div>
         {this.props.cart.productList.map(product => {

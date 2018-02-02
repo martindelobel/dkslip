@@ -1,13 +1,17 @@
-const initialState = { productList: [] };
+const initialState = localStorage.getItem("productList")
+  ? {productList: JSON.parse(localStorage.getItem("productList"))}
+  : {productList: []};
 
 export default function cartReducer(state = initialState, action) {
   switch (action.type) {
     case "PUSH":
+      localStorage.setItem("productList", JSON.stringify([action.data]));
       return {
         ...state,
         productList: [action.data]
       };
     case "ADD_PRODUCTS":
+      localStorage.setItem("productList", JSON.stringify([action.data]));
       return {
         ...state,
         productList: [action.data]
@@ -22,6 +26,7 @@ export default function cartReducer(state = initialState, action) {
           iteminfo: action.data,
           quantity: state.productList[productToUpdate].quantity + 1
         });
+        localStorage.setItem("productList", JSON.stringify(quantityUpdated));
         return {
           ...state,
           productList: quantityUpdated
@@ -29,6 +34,7 @@ export default function cartReducer(state = initialState, action) {
       } else {
         const tempArray = state.productList.slice();
         tempArray.push({ iteminfo: action.data, quantity: 1 })
+        localStorage.setItem("productList", JSON.stringify(tempArray));
         return {
           ...state,
           productList: tempArray
@@ -43,6 +49,7 @@ export default function cartReducer(state = initialState, action) {
         iteminfo: state.productList[addQuantityToProduct].iteminfo,
         quantity: state.productList[addQuantityToProduct].quantity + 1
       });
+    localStorage.setItem("productList", JSON.stringify(quantityUpdatedToProduct));
     return {
       ...state,
       productList: quantityUpdatedToProduct
@@ -57,11 +64,13 @@ export default function cartReducer(state = initialState, action) {
         iteminfo: state.productList[subQuantityToProduct].iteminfo,
         quantity: state.productList[subQuantityToProduct].quantity - 1
       });
+    localStorage.setItem("productList", JSON.stringify(quantityToDecrement));
     return {
       ...state,
       productList: quantityToDecrement
     };}
     case "DELETE":
+      localStorage.clear();
       return {
         ...state,
         productList:[]
