@@ -39,7 +39,7 @@ class Product extends Component {
                   <div className="item-button-zone">
                     <button
                     onClick={() => this.props.actions.cartAction.increment(
-                      this.props.product.product.id
+                      this.props.product.product
                     )}
                     >Add to cart
                     </button>

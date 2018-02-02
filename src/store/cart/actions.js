@@ -2,16 +2,8 @@ export function cartAction(dispatch) {
   return {
     pushCart: (product) => dispatch({type: "PUSH", data: product}),
     increment: (product) => dispatch({type: "ADD", data: product}),
-    decrement: () => dispatch({type: "SUB"}),
+    decrement: (product) => dispatch({type: "SUB", data: product}),
     delete: () => dispatch({type: "DELETE"}),
-    addToCart: () => {
-        try{
-          localStorage.setItem('productList', 'toto');
-          return true;
-        } catch(error){
-          console.warn('Something');
-          return false;
-        }
-      }
+    addQuantity:(product) => dispatch({type:"ADD_QUANTITY", data: product}),
   }
 }

@@ -9,11 +9,9 @@ import { productAction } from "../store/product/actions.js";
 
 class ProductList extends Component {
   render() {
-    console.log(this.props.cart.productList);
     return (
       <div>
         {this.props.cart.productList.map(product => {
-          console.log(product.iteminfo.id);
           return (
           <div className="cart-content" key={product.iteminfo.id}>
             <div className="picture-item">
@@ -30,15 +28,15 @@ class ProductList extends Component {
             </div>
             <div className="quantity-item">
               <p>
-                <button onClick={this.props.decrement}> - </button>
+                <button className="update-quantity" onClick={()=>this.props.actions.cartAction.decrement(product.iteminfo)}> - </button>
                 <span>{product.quantity}</span>
-                <button onClick={this.props.increment}> + </button>
+                <button className="update-quantity" onClick={()=>this.props.actions.cartAction.addQuantity(product.iteminfo)}> + </button>
               </p>
             </div>
             <div className="delete-item">
               <p>
                 {" "}
-                <button onClick={this.props.delete}> Delete </button>
+                <button onClick={this.props.actions.cartAction.delete}> Delete </button>
                 <span>{product.quantity}</span>{" "}
               </p>
             </div>
