@@ -28,15 +28,25 @@ class ProductList extends Component {
             </div>
             <div className="quantity-item">
               <p>
-                <button className="update-quantity" onClick={()=>this.props.actions.cartAction.decrement(product.iteminfo)}> - </button>
+                <button className="update-quantity" onClick={()=>{
+                  this.props.actions.cartAction.decrement(product.iteminfo);
+                  console.log(this.props.cart.productList);
+                  localStorage.setItem("productList", JSON.stringify(this.props.cart.productList));
+                }}> - </button>
                 <span>{product.quantity}</span>
-                <button className="update-quantity" onClick={()=>this.props.actions.cartAction.addQuantity(product.iteminfo)}> + </button>
+                <button className="update-quantity" onClick={() => {
+                  this.props.actions.cartAction.addQuantity(product.iteminfo);
+                  localStorage.setItem("productList", JSON.stringify(this.props.cart.productList));
+                }}> + </button>
               </p>
             </div>
             <div className="delete-item">
               <p>
                 {" "}
-                <button onClick={this.props.actions.cartAction.delete}> Delete </button>
+                <button onClick={() => {
+                  this.props.actions.cartAction.delete();
+                  localStorage.clear();
+                }}> Delete </button>
                 <span>{product.quantity}</span>{" "}
               </p>
             </div>

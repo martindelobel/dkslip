@@ -7,10 +7,6 @@ import ProductList from "./productList.js";
 
 
 class Cart extends Component {
-  // totalPrice = () => {
-  //   return {props.counter} * {props.price}
-  // }
-
   render() {
     return (
       <div className="General-Cart">

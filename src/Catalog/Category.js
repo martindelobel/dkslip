@@ -36,10 +36,10 @@ class Category extends Component {
                 <p><i className="fas fa-check-circle" style={{color:'green'}}></i> stock</p>
                 <div className="item-button-zone">
                   <button
-                  onClick={() => this.props.actions.cartAction.increment(
-                    products
-                  )}
-                  >Add to cart</button>
+                  onClick={() => {
+                    this.props.actions.cartAction.increment(products);
+                    localStorage.setItem("productList", JSON.stringify(this.props.cart.productList));
+                  }}>Add to cart</button>
                   <NavLink
                     style={{ textDecoration: 'none' }}
                     key={products.id}
@@ -51,9 +51,6 @@ class Category extends Component {
               </li>
             ))}
           </ul>
-
-
-
         </div>
       </div>
     );
