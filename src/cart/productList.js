@@ -29,40 +29,35 @@ class ProductList extends Component {
             </td>
             <td className="quantity-item ta-center">
               <p>
-                <button className="update-quantity" onClick={()=>{
+                <button className="update-quantity-less update-quantity" onClick={()=>{
                   this.props.actions.cartAction.decrement(product.iteminfo)
                 }}> - </button>
                 <span>{product.quantity}</span>
-                <button className="update-quantity" onClick={() => {
+                <button className="update-quantity-more update-quantity" onClick={() => {
                   this.props.actions.cartAction.addQuantity(product.iteminfo)
                 }}> + </button>
               </p>
             </td>
             <td className="delete-item ta-center">
               <p>
-                <button onClick={() => {
+                <button className="trash-button" onClick={() => {
                   this.props.actions.cartAction.deleteProduct(product.iteminfo)
-                }}> Delete </button>
+                }}> <i className="fas fa-trash-alt"></i></button>
               </p>
             </td>
             <td className="price-by-item ta-center price-product">
               <p> {product.iteminfo.min_price}€ </p>
             </td>
             <td className="total-price price-product-total ta-center">
-              <p> {product.quantity * product.iteminfo.min_price} €</p>
+              <p> {(product.quantity * product.iteminfo.min_price).toFixed(2)} €</p>
             </td>
             </div>
-            <div className="price-by-item">
-              <p> {product.iteminfo.min_price} </p>
-            </div>
-            <div className="total-price">
-              <p> {(product.quantity * product.iteminfo.min_price).toFixed(2)} </p>
-            </div>
+            <div className="product-separator"></div>
           </div>
         )}
        )}
-        <div className="Cart-Total">Total de la commande : {this.props.cart.totalQty.toFixed(2)}EUR</div>
-      </div>
+        <div className="Cart-Total">Total Order : {this.props.cart.totalQty.toFixed(2)}EUR</div>
+      </tr>
     );
   }
 }

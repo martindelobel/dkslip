@@ -11,21 +11,22 @@ class Cart extends Component {
   render() {
     return (
       <div className="General-Cart">
-        <div className="Title-Cart">Récapitulatif de mon panier</div>
+        <div className="Title-Cart">RESUME CART</div>
         <div className="name-section">
-            <span>Photo</span>
+            <span></span>
             <span>Name</span>
-            <span>Quantité</span>
-            <span>Supprimer</span>
-            <span>Prix Unitaire</span>
-            <span>Prix total</span>
+            <span>Quantities</span>
+            <span>Delete</span>
+            <span>Unit price</span>
+            <span>Total price</span>
         </div>
         <ProductList />
-        <p>
+        <div className="Button-Cart-Trash">
           <button className="Button-Cart" onClick={()=>this.props.actions.cartAction.deleteCart()}> Delete Cart</button>
-        </p>
+        </div>
         <div className="Button-Cart">
-          <button><NavLink to={`/DeliveryAddressConfirmation`}>Finaliser la commande</NavLink></button>
+          <button><NavLink
+          style={{ textDecoration: 'none', color:'#FFF' }} to={`/DeliveryAddressConfirmation`}>Finalize order</NavLink></button>
         </div>
       </div>
     );

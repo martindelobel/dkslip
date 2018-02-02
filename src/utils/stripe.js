@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
+import { cartAction } from "../store/cart/actions.js";
 
 
 class Stripe extends Component {
@@ -20,7 +21,9 @@ class Stripe extends Component {
 
           console.log(data);
           // dispatch a success
+            this.props.actions.cartAction.deleteCart();
           this.props.history.push(`/Success`);
+
         } else {
           console.warn(data);
           this.props.history.push(`/Failed`);
@@ -58,4 +61,12 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect( mapStateToProps,null)(Stripe);
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      cartAction: cartAction(dispatch)
+    }
+  };
+}
+
+export default connect( mapStateToProps,mapDispatchToProps)(Stripe);

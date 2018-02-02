@@ -422,6 +422,27 @@ background-color: rgba(0, 0, 0, 0.2);
   justify-content:flex-end;
   margin-right: 3vw;
 }
+.Cart-Total{
+  margin-top: 2vh;
+  font-size: 1.3vw;
+}
+.Button-Cart-Trash{
+  display: flex;
+  justify-content:flex-start;
+  margin-right: 3vw;
+}
+.Button-Cart-Trash button{
+  color: #FFF;
+  background-color: rgba(165, 39, 12, 1);
+  border-style: none;
+  position: absolute;
+  border-radius: 5px;
+  font-size: 12pt;
+  height: 5vh;
+  margin-left: 2vw;
+  outline: none;
+  margin-bottom: 3vh;
+}
 .Button-Cart button{
   color: #FFF;
   background-color: rgba(165, 39, 12, 1);
