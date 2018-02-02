@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { catalogActions } from "../store/catalog/actions.js";
 import { cartAction } from "../store/cart/actions.js";
 import ProductList from "./productList.js";
+import { NavLink } from "react-router-dom";
 
 
 class Cart extends Component {
@@ -20,8 +21,11 @@ class Cart extends Component {
             <span>Prix total</span>
         </div>
         <ProductList />
+        <p>
+          <button className="Button-Cart" onClick={()=>this.props.actions.cartAction.deleteCart()}> Delete Cart</button>
+        </p>
         <div className="Button-Cart">
-          <button>Finaliser la commande</button>
+          <button><NavLink to={`/DeliveryAddressConfirmation`}>Finaliser la commande</NavLink></button>
         </div>
 
       </div>
@@ -30,4 +34,12 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      cartAction: cartAction(dispatch)
+    }
+  };
+}
+
+export default connect(null, mapDispatchToProps)(Cart);

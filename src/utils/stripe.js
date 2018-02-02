@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 
 
@@ -8,10 +9,7 @@ class Stripe extends Component {
       method: "POST",
       body: JSON.stringify({
         stripeData: token,
-        products: [
-          {id: 42, quantity: 2},
-          {id: 1337, quantity: 1}
-        ]
+        products: this.props.cart.productList
       }),
       headers: { "Content-Type": "application/json" }
     })
@@ -30,21 +28,33 @@ class Stripe extends Component {
   };
   render() {
     return (
+      <div>
+        <h1>Pay with Stripe</h1>
         <div className="Checkout">
           <StripeCheckout
             token={this.onToken}
-            amount={999}
+            amount={this.props.cart.totalQty * 100}
             currency="EUR"
             stripeKey={process.env.REACT_APP_PUBLISHABLE_KEY}
             image="https://stripe.com/img/documentation/checkout/marketplace.png"
-            email="toto@toto.com"
-            name="My Demo of Stripe"
-            description="Change me into a description"
+            email=""
+            name="Stripe Payment"
+            description="Pay with Stripe"
           >
           </StripeCheckout>
         </div>
+      </div>
     );
   }
 }
 
-export default Stripe;
+function mapStateToProps(state) {
+  return {
+    cart: {
+      productList: state.cartReducer.productList,
+      totalQty:state.cartReducer.totalQty
+    }
+  };
+}
+
+export default connect( mapStateToProps,null)(Stripe);

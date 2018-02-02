@@ -45,10 +45,11 @@ class ProductList extends Component {
             </div>
             <div className="delete-item">
               <p>
-                {" "}
                 <button onClick={() => {
-                  this.props.actions.cartAction.delete()
-                    .then(() => localStorage.clear())
+                  this.props.actions.cartAction.deleteProduct(product.iteminfo)
+                  .then(() =>
+                    localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
+                  )
                 }}> Delete </button>
                 <span>{product.quantity}</span>{" "}
               </p>
@@ -57,12 +58,12 @@ class ProductList extends Component {
               <p> {product.iteminfo.min_price} </p>
             </div>
             <div className="total-price">
-              <p> {product.quantity * product.iteminfo.min_price} </p>
+              <p> {(product.quantity * product.iteminfo.min_price).toFixed(2)} </p>
             </div>
           </div>
         )}
        )}
-        <div className="Cart-Total">Total de la commande : EUR</div>
+        <div className="Cart-Total">Total de la commande : {this.props.cart.totalQty.toFixed(2)}EUR</div>
       </div>
     );
   }
@@ -71,7 +72,8 @@ class ProductList extends Component {
 function mapStateToProps(state) {
   return {
     cart: {
-      productList: state.cartReducer.productList
+      productList: state.cartReducer.productList,
+      totalQty:state.cartReducer.totalQty
     },
     product: {
       product: state.productReducer.product
