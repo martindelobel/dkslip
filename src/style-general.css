@@ -511,6 +511,7 @@ background-color: rgba(0, 0, 0, 0.2);
   }
   .trash-button{
     color: rgba(165, 39, 12, 0.8);
+    background: rgba(0, 0, 0, 0);
     border: none;
     outline: none;
     font-size: 2vw;
@@ -579,21 +580,6 @@ background-color: rgba(0, 0, 0, 0.2);
 }
 /* END FOOTER */
 
-
-/* start Delivery */
-.Delivery {
-  text-transform: uppercase;
-  font-weight: lighter;
-  list-style: none;
-  text-align: left;
-  display: block;
-  margin: auto;
-}
-/*End Delivery */
-
-
-
-
 /* MEDIA QUERY TO 600px width */
 @media (max-width:800px){
   /* SINGLE PRODUCT PAGE  */
@@ -643,3 +629,119 @@ background-color: rgba(0, 0, 0, 0.2);
 
   /* END LIST PRODUCT PAGE  */
 }
+
+/* DELIVERY FORM START SETTINGS */
+.delivery-content{
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  color: #FFF;
+  padding-bottom: 10vh;
+  margin-bottom: -5vh;
+}
+/* .delivery-bg{
+  height: 90vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -999;
+  transform: skewY(-3deg);
+  opacity: 0.4;
+  transform-origin: top left;
+} */
+.delivery-form-content{
+  width: 25vw;
+  background: linear-gradient(135deg, #193A4F 0%,#499ADD 50%,#1f559b 100%);
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 5s ease infinite;
+  -moz-animation: AnimationName 5s ease infinite;
+  -o-animation: AnimationName 5s ease infinite;
+  animation: AnimationName 5s ease infinite;
+  padding: 5vh 5vw;
+  border-radius: 20px;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+form{
+  font-family: arial;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 50vh;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.flex-column-flex-end{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+form label{
+  margin-bottom: 1vh;
+  font-size: 1.3vw;
+}
+form h2{
+  border-radius: 10px;
+  padding: 1vw 1vh;
+  text-align: center;
+}
+form input{
+  width: 25vw;
+  height: 3vh;
+  overflow-x: scroll;
+  border: none;
+  color: #FFF;
+  margin-bottom: 1vh;
+  border-bottom: solid 0.2px #FFF;
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  font-size: 1vw;
+}
+form button {
+  width: 10vw;
+  height: 6vh;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+}
+form button:hover{
+  background: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+}
+form button:hover, form button p:hover{
+  color: #1f559b;
+}
+form button p {
+  text-decoration: none;
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 1vw;
+}
+
+/* END DELIVERY FORM SETTINGS */
