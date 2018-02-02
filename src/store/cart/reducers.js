@@ -7,8 +7,10 @@ const initialState = () => {
     return defaultValue
   }
   return localStorage.getItem("productList")
-  ? {productList: JSON.parse(localStorage.getItem("productList"),totalQty: JSON.parse(localStorage.getItem("totalQty")
-)}
+  ? {
+      productList: JSON.parse(localStorage.getItem("productList")),
+      totalQty: JSON.parse(localStorage.getItem("totalQty"))
+    }
   : defaultValue;
 }
 

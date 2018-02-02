@@ -51,7 +51,6 @@ class ProductList extends Component {
                     localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
                   )
                 }}> Delete </button>
-                <span>{product.quantity}</span>{" "}
               </p>
             </div>
             <div className="price-by-item">
