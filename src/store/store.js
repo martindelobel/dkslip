@@ -9,9 +9,6 @@ import productReducer from "./product/reducers";
 import { reducer as formReducer } from 'redux-form';
 import deliveryReducer from "./delivery/reducers";
 
-
-
-
 let reducers = combineReducers(
   {
     cartReducer:cartReducer,
@@ -25,6 +22,5 @@ let reducers = combineReducers(
 );
 
 let store = createStore(reducers, applyMiddleware(logger, thunk));
-
 
 export default store;
