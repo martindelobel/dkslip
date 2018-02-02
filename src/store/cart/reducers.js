@@ -1,20 +1,9 @@
-const initialState = () => {
-  const defaultValue = {
+const initialState = {
     productList: [],
     totalQty:0
   };
-  if (typeof localStorage === "undefined") {
-    return defaultValue
-  }
-  return localStorage.getItem("productList")
-  ? {
-      productList: JSON.parse(localStorage.getItem("productList")),
-      totalQty: JSON.parse(localStorage.getItem("totalQty"))
-    }
-  : defaultValue;
-}
 
-export default function cartReducer(state = initialState(), action) {
+export default function cartReducer(state = initialState, action) {
   switch (action.type) {
     case "PUSH":
       return {

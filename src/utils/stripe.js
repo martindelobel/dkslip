@@ -9,7 +9,8 @@ class Stripe extends Component {
       method: "POST",
       body: JSON.stringify({
         stripeData: token,
-        products: this.props.cart.productList
+        products: this.props.cart.productList,
+        amount: this.props.cart.totalQty * 100
       }),
       headers: { "Content-Type": "application/json" }
     })

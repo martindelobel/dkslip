@@ -27,9 +27,7 @@ class Cart extends Component {
         <div className="Button-Cart">
           <button><NavLink to={`/DeliveryAddressConfirmation`}>Finaliser la commande</NavLink></button>
         </div>
-
       </div>
-
     );
   }
 }
