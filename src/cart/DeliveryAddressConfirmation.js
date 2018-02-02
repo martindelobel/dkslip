@@ -6,8 +6,11 @@ import Delivery from "./Delivery"
 class DeliveryAddressConfirmation extends Component {
   render() {
     return (
-      <div>
-        <Delivery onSubmit={this.props.getDeliveryAddress}/>
+      <div className="delivery-content">
+        <div className="delivery-form-content">
+        <div className="delivery-form-content-bg1"></div>
+          <Delivery onSubmit={this.props.getDeliveryAddress}/>
+        </div>
       </div>
     );
   }

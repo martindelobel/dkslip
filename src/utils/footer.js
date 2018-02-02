@@ -7,7 +7,7 @@ class Footer extends Component {
       <div className="footer-bg"></div>
         <div className="footer-left">
           <ul>
-            <li className="visible">Home</li>
+            <li className="visible"><a href="/" style={{textDecoration:"none", color:'#FFF'}}>Home</a></li>
             <li className="visible">Catalog</li>
             <li className="visible">Login</li>
             <li className="visible">Login</li>
@@ -31,7 +31,7 @@ class Footer extends Component {
         <div className="vertical-separator"></div>
         <div className="footer-right">
           <ul>
-            <li className="visible">Home</li>
+            <li className="visible"><a href="/">Home</a></li>
             <li className="visible">Catalog</li>
             <li className="visible">Login</li>
             <li className="visible">Login</li>

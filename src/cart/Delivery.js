@@ -11,23 +11,26 @@ class Delivery extends Component {
   render() {
     return (
       <form onSubmit={this.props.handleSubmit}>
-        <div>
+      <h2>Type your delivery information</h2>
+        <div className="flex-colum">
           <label>Address</label>
           <Field name="Address" component="input" type="text"/>
         </div>
-        <div>
+        <div className="flex-column">
           <label>ZipCode</label>
           <Field name="zipcode" component="input" type="text"/>
         </div>
-        <div>
+        <div className="flex-column">
           <label>City</label>
           <Field name="city" component="input" type="text"/>
         </div>
-        <div>
+        <div className="flex-column">
           <label>Country</label>
           <Field name="country" component="input" type="text"/>
         </div>
-        <button type="submit"><NavLink to={`/payment`}>Submit</NavLink></button>
+        <div className="flex-column-flex-end">
+        <button type="submit"><NavLink to={`/payment`} style={{ textDecoration: 'none' }}><p>Submit</p></NavLink></button>
+        </div>
       </form>
     );
   }
