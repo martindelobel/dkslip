@@ -10,11 +10,12 @@ import { productAction } from "../store/product/actions.js";
 class ProductList extends Component {
   render() {
     return (
-      <div>
+      <tr>
         {this.props.cart.productList.map(product => {
           return (
           <div className="cart-content" key={product.iteminfo.id}>
-            <div className="picture-item">
+          <div className="product-info">
+            <td className="picture-item ta-center">
               <img
                 src={
                   "https://www.decathlon.fr/media/" +
@@ -22,11 +23,11 @@ class ProductList extends Component {
                 }
                 alt={product.iteminfo.description}
               />
-            </div>
-            <div className="name-item">
+            </td>
+            <td className="name-item ta-center">
               <p> {product.iteminfo.title} </p>
-            </div>
-            <div className="quantity-item">
+            </td>
+            <td className="quantity-item ta-center">
               <p>
                 <button className="update-quantity" onClick={()=>{
                   this.props.actions.cartAction.decrement(product.iteminfo)
@@ -36,13 +37,20 @@ class ProductList extends Component {
                   this.props.actions.cartAction.addQuantity(product.iteminfo)
                 }}> + </button>
               </p>
-            </div>
-            <div className="delete-item">
+            </td>
+            <td className="delete-item ta-center">
               <p>
                 <button onClick={() => {
                   this.props.actions.cartAction.deleteProduct(product.iteminfo)
                 }}> Delete </button>
               </p>
+            </td>
+            <td className="price-by-item ta-center price-product">
+              <p> {product.iteminfo.min_price}€ </p>
+            </td>
+            <td className="total-price price-product-total ta-center">
+              <p> {product.quantity * product.iteminfo.min_price} €</p>
+            </td>
             </div>
             <div className="price-by-item">
               <p> {product.iteminfo.min_price} </p>
