@@ -9,6 +9,7 @@ import { productAction } from "../store/product/actions.js";
 
 class ProductList extends Component {
   render() {
+
     return (
       <div>
         {this.props.cart.productList.map(product => {
@@ -47,10 +48,9 @@ class ProductList extends Component {
               <p> {product.quantity * product.iteminfo.min_price} </p>
             </div>
           </div>
-        )
-        }
-      )}
-        <div className="Cart-Total">Total de la commande : 99Fr</div>
+        )}
+       )}
+        <div className="Cart-Total">Total de la commande : EUR</div>
       </div>
     );
   }
