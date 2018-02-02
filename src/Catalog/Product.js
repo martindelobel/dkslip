@@ -38,7 +38,7 @@ class Product extends Component {
                   <p className="price">{this.props.product.product.min_price}€</p>
                   <div className="item-button-zone">
                     <button
-                    onClick={() => this.props.actions.cartAction.increment(
+                    onClick={() => this.props.actions.cartAction.addNewProductToCart(
                       this.props.product.product
                     )}
                     >Add to cart

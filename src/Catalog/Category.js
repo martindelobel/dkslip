@@ -3,10 +3,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { categoryAction } from "../store/category/actions.js";
 import { cartAction } from "../store/cart/actions.js";
-import { displayProductsList } from "../store/category/selectors.js";
 import { productAction } from "../store/product/actions.js";
-import { displayProduct } from "../store/product/selectors.js";
-import { displayCart } from "../store/cart/selectors";
 
 class Category extends Component {
   componentDidMount() {
@@ -38,7 +35,7 @@ class Category extends Component {
                 <div className="item-button-zone">
                   <button
                   onClick={() => {
-                    this.props.actions.cartAction.increment(products)
+                    this.props.actions.cartAction.addNewProductToCart(products)
                       .then(() =>
                         localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
                       )

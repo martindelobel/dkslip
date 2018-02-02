@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "../style-general.css";
 import { connect } from "react-redux";
-import { displayCart } from "../store/cart/selectors";
-import { displayProduct } from "../store/product/selectors";
 import { cartAction } from "../store/cart/actions.js";
 import { productAction } from "../store/product/actions.js";
 
@@ -36,7 +34,7 @@ class ProductList extends Component {
                 }}> - </button>
                 <span>{product.quantity}</span>
                 <button className="update-quantity" onClick={() => {
-                  this.props.actions.cartAction.addQuantity(product.iteminfo)
+                  this.props.actions.cartAction.increment(product.iteminfo)
                     .then(() =>
                       localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
                     )
