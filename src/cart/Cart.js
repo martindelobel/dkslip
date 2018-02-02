@@ -18,7 +18,7 @@ class Cart extends Component {
             <span>Prix total</span>
         </div>
         <div>
-          {this.props.cart.productList.map(product => {
+          {this.props.cart.products.map(product => {
             return (
             <div className="cart-content" key={product.iteminfo.id}>
               <div className="picture-item">
@@ -38,14 +38,14 @@ class Cart extends Component {
                   <button className="update-quantity" onClick={()=>{
                     this.props.actions.cartAction.decrement(product.iteminfo)
                       .then(() =>
-                        localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
+                        localStorage.setItem("productList", JSON.stringify(this.props.cart.products))
                       )
                   }}> - </button>
                   <span>{product.quantity}</span>
                   <button className="update-quantity" onClick={() => {
                     this.props.actions.cartAction.increment(product.iteminfo)
                       .then(() =>
-                        localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
+                        localStorage.setItem("productList", JSON.stringify(this.props.cart.products))
                       )
                   }}> + </button>
                 </p>
@@ -84,7 +84,7 @@ class Cart extends Component {
 function mapStateToProps(state) {
   return {
     cart: {
-      productList: state.cartReducer.productList
+      products: state.cartReducer.productsCarted
     },
     product: {
       product: state.productReducer.product

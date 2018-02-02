@@ -1,69 +1,69 @@
 const initialState = () => {
-  const defaultValue = {productList: []};
+  const defaultValue = {productsCarted: []};
   if (typeof localStorage === "undefined") {
     return defaultValue
   }
-  return localStorage.getItem("productList")
-  ? {productList: JSON.parse(localStorage.getItem("productList"))}
+  return localStorage.getItem("productsCarted")
+  ? {productsCarted: JSON.parse(localStorage.getItem("productsCarted"))}
   : defaultValue;
 }
 
 export default function cartReducer(state = initialState(), action) {
   switch (action.type) {
     case "ADD_NEW":
-      const productToUpdate = state.productList.findIndex(
+      const productToUpdate = state.productsCarted.findIndex(
         product => product.iteminfo.id === action.data.id
       );
       if (productToUpdate >= 0) {
-        const quantityUpdated = state.productList.slice();
+        const quantityUpdated = state.productsCarted.slice();
         quantityUpdated.splice(productToUpdate, 1, {
           iteminfo: action.data,
-          quantity: state.productList[productToUpdate].quantity + 1
+          quantity: state.productsCarted[productToUpdate].quantity + 1
         });
         return {
           ...state,
-          productList: quantityUpdated
+          productsCarted: quantityUpdated
         };
       } else {
-        const tempArray = state.productList.slice();
+        const tempArray = state.productsCarted.slice();
         tempArray.push({ iteminfo: action.data, quantity: 1 })
         return {
           ...state,
-          productList: tempArray
+          productsCarted: tempArray
         };
       };
     case "ADD_QUANTITY":
-      const addQuantityToProduct = state.productList.findIndex(
+      const addQuantityToProduct = state.productsCarted.findIndex(
         product => (product.iteminfo.id === action.data.id)
       );
-      const quantityUpdatedToProduct = state.productList.slice();
+      const quantityUpdatedToProduct = state.productsCarted.slice();
       quantityUpdatedToProduct.splice(addQuantityToProduct, 1, {
-          iteminfo: state.productList[addQuantityToProduct].iteminfo,
-          quantity: state.productList[addQuantityToProduct].quantity + 1
+          iteminfo: state.productsCarted[addQuantityToProduct].iteminfo,
+          quantity: state.productsCarted[addQuantityToProduct].quantity + 1
         });
       return {
         ...state,
-        productList: quantityUpdatedToProduct
+        productsCarted: quantityUpdatedToProduct
       };
     case "SUB":
-      const subQuantityToProduct = state.productList.findIndex(
+      const subQuantityToProduct = state.productsCarted.findIndex(
         product => (product.iteminfo.id === action.data.id)
       );
-      if (state.productList[subQuantityToProduct].quantity > 0){
-        const quantityToDecrement = state.productList.slice();
+      if (state.productsCarted[subQuantityToProduct].quantity > 0){
+        const quantityToDecrement = state.productsCarted.slice();
         quantityToDecrement.splice(subQuantityToProduct, 1, {
-          iteminfo: state.productList[subQuantityToProduct].iteminfo,
-          quantity: state.productList[subQuantityToProduct].quantity - 1
+          iteminfo: state.productsCarted[subQuantityToProduct].iteminfo,
+          quantity: state.productsCarted[subQuantityToProduct].quantity - 1
         });
         return {
           ...state,
-          productList: quantityToDecrement
+          productsCarted: quantityToDecrement
         };
       }
     case "DELETE":
       return {
         ...state,
-        productList:[]
+        productsCarted:[]
       };
     default:
       return state;

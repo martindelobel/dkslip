@@ -37,7 +37,7 @@ class Category extends Component {
                   onClick={() => {
                     this.props.actions.cartAction.addNewProductToCart(products)
                       .then(() =>
-                        localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
+                        localStorage.setItem("productList", JSON.stringify(this.props.cart.products))
                       )
                   }}>Add to cart</button>
                   <NavLink
@@ -60,7 +60,7 @@ class Category extends Component {
 function mapStateToProps(state) {
   return {
     cart: {
-      productList: state.cartReducer.productList
+      products: state.cartReducer.productsCarted
     },
     product: {
       product: state.productReducer.product
