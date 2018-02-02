@@ -6,6 +6,7 @@ import { cartAction } from "../store/cart/actions.js";
 import { displayProductsList } from "../store/category/selectors.js";
 import { productAction } from "../store/product/actions.js";
 import { displayProduct } from "../store/product/selectors.js";
+import { displayCart } from "../store/cart/selectors";
 
 class Category extends Component {
   componentDidMount() {
@@ -22,8 +23,8 @@ class Category extends Component {
       <div className="Categories">
         <div className="item-content">
           <ul>
-            {this.props.category.productList.map(products => (
-              <li>
+            {this.props.category.cartproductList.map(products => (
+              <li key={products.id}>
                 <h4>{products.title}</h4>
                 <p className="price-item">{products.min_price}€</p>
                 <img  src={"https://www.decathlon.fr/media/" + products.image_path} alt={products.description}></img>
@@ -37,8 +38,10 @@ class Category extends Component {
                 <div className="item-button-zone">
                   <button
                   onClick={() => {
-                    this.props.actions.cartAction.increment(products);
-                    localStorage.setItem("productList", JSON.stringify(this.props.cart.productList));
+                    this.props.actions.cartAction.increment(products)
+                      .then(() =>
+                        localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
+                      )
                   }}>Add to cart</button>
                   <NavLink
                     style={{ textDecoration: 'none' }}
@@ -56,6 +59,21 @@ class Category extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    cart: {
+      productList: state.cartReducer.productList
+    },
+    product: {
+      product: state.productReducer.product
+    },
+    category:{
+      cartproductList: state.categoryReducer.productList
+    }
+  };
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
@@ -66,4 +84,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(displayProductsList, mapDispatchToProps)(Category);
+export default connect(mapStateToProps, mapDispatchToProps)(Category);
