@@ -4,51 +4,52 @@ import { connect } from "react-redux";
 import { displayCart } from "../store/cart/selectors";
 import { displayProduct } from "../store/product/selectors";
 import { cartAction } from "../store/cart/actions.js";
+import { productAction } from "../store/product/actions.js";
+
 
 class ProductList extends Component {
   render() {
-    let totalligne;
-    let total;
-    console.log(this.props.cart.productList);
+
     return (
       <div>
-        {this.props.cart.productList.map(product => (
-
-          <div className="cart-content" key={product.id}>
+        {this.props.cart.productList.map(product => {
+          return (
+          <div className="cart-content" key={product.iteminfo.id}>
             <div className="picture-item">
               <img
                 src={
                   "https://www.decathlon.fr/media/" +
-                  this.props.product.product.image_path
+                  product.iteminfo.image_path
                 }
-                alt={this.props.product.product.description}
+                alt={product.iteminfo.description}
               />
             </div>
             <div className="name-item">
-              <p> {this.props.product.product.title} </p>
+              <p> {product.iteminfo.title} </p>
             </div>
             <div className="quantity-item">
               <p>
-                <button onClick={this.props.decrement}> - </button>
+                <button className="update-quantity" onClick={()=>this.props.actions.cartAction.decrement(product.iteminfo)}> - </button>
                 <span>{product.quantity}</span>
-                <button onClick={this.props.increment}> + </button>
+                <button className="update-quantity" onClick={()=>this.props.actions.cartAction.addQuantity(product.iteminfo)}> + </button>
               </p>
             </div>
             <div className="delete-item">
               <p>
                 {" "}
-                <button onClick={this.props.delete}> Delete </button>
+                <button onClick={this.props.actions.cartAction.delete}> Delete </button>
                 <span>{product.quantity}</span>{" "}
               </p>
             </div>
             <div className="price-by-item">
-              <p> {this.props.product.product.min_price} </p>
+              <p> {product.iteminfo.min_price} </p>
             </div>
             <div className="total-price">
-              <p> {product.quantity * this.props.product.product.min_price} </p>
+              <p> {product.quantity * product.iteminfo.min_price} </p>
             </div>
           </div>
-        ))}
+        )}
+       )}
         <div className="Cart-Total">Total de la commande : EUR</div>
       </div>
     );
@@ -65,4 +66,14 @@ function mapStateToProps(state) {
     }
   };
 }
-export default connect(mapStateToProps, cartAction)(ProductList);
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: {
+      productAction: productAction(dispatch),
+      cartAction: cartAction(dispatch)
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList);

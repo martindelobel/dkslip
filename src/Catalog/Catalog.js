@@ -28,15 +28,21 @@ class Catalog extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     const slippedCat = this.props.catalog.catList.filter(cat =>
       slipCategories.includes(cat.id)
     );
+
     return (
       <div>
         <ul>
           {slippedCat.map(cat => (
-            <li key={cat.id}>
-              <NavLink key={cat.id} to={`/category/${cat.id}`}>
+            <li className="subitem-link"key={cat.id}>
+              <NavLink
+                key={cat.id}
+                to={`/category/${cat.id}`}
+              >
                 {cat.label}
               </NavLink>
             </li>

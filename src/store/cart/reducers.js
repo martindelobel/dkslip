@@ -14,12 +14,12 @@ export default function cartReducer(state = initialState, action) {
       };
     case "ADD":
       const productToUpdate = state.productList.findIndex(
-        product => product.id === action.data
+        product => product.iteminfo.id === action.data.id
       );
       if (productToUpdate >= 0) {
         const quantityUpdated = state.productList.slice();
         quantityUpdated.splice(productToUpdate, 1, {
-          id: action.data,
+          iteminfo: action.data,
           quantity: state.productList[productToUpdate].quantity + 1
         });
         return {
@@ -28,21 +28,43 @@ export default function cartReducer(state = initialState, action) {
         };
       } else {
         const tempArray = state.productList.slice();
-        tempArray.push({ id: action.data, quantity: 1 })
+        tempArray.push({ iteminfo: action.data, quantity: 1 })
         return {
           ...state,
           productList: tempArray
         };
-      }
-    case "SUB":
-      return {
-        ...state,
-        productList: [{ id: 777, quantity: 0 }]
       };
+    case "ADD_QUANTITY":
+    const addQuantityToProduct = state.productList.findIndex(
+      product => (product.iteminfo.id === action.data.id)
+    );
+    const quantityUpdatedToProduct = state.productList.slice();
+    quantityUpdatedToProduct.splice(addQuantityToProduct, 1, {
+        iteminfo: state.productList[addQuantityToProduct].iteminfo,
+        quantity: state.productList[addQuantityToProduct].quantity + 1
+      });
+    return {
+      ...state,
+      productList: quantityUpdatedToProduct
+    };
+    case "SUB":
+    const subQuantityToProduct = state.productList.findIndex(
+      product => (product.iteminfo.id === action.data.id)
+    );
+    if (state.productList[subQuantityToProduct].quantity > 0){
+    const quantityToDecrement = state.productList.slice();
+    quantityToDecrement.splice(subQuantityToProduct, 1, {
+        iteminfo: state.productList[subQuantityToProduct].iteminfo,
+        quantity: state.productList[subQuantityToProduct].quantity - 1
+      });
+    return {
+      ...state,
+      productList: quantityToDecrement
+    };}
     case "DELETE":
       return {
         ...state,
-        productList: [{ id: 777, quantity: 0 }]
+        productList:[]
       };
     default:
       return state;
