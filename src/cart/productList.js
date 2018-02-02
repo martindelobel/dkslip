@@ -30,16 +30,10 @@ class ProductList extends Component {
               <p>
                 <button className="update-quantity" onClick={()=>{
                   this.props.actions.cartAction.decrement(product.iteminfo)
-                    .then(() =>
-                      localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
-                    )
                 }}> - </button>
                 <span>{product.quantity}</span>
                 <button className="update-quantity" onClick={() => {
                   this.props.actions.cartAction.addQuantity(product.iteminfo)
-                    .then(() =>
-                      localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
-                    )
                 }}> + </button>
               </p>
             </div>
@@ -47,9 +41,6 @@ class ProductList extends Component {
               <p>
                 <button onClick={() => {
                   this.props.actions.cartAction.deleteProduct(product.iteminfo)
-                  .then(() =>
-                    localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
-                  )
                 }}> Delete </button>
               </p>
             </div>

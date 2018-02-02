@@ -39,9 +39,6 @@ class Category extends Component {
                   <button
                   onClick={() => {
                     this.props.actions.cartAction.increment(products)
-                      .then(() =>
-                        localStorage.setItem("productList", JSON.stringify(this.props.cart.productList))
-                      )
                   }}>Add to cart</button>
                   <NavLink
                     style={{ textDecoration: 'none' }}
