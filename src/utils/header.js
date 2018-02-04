@@ -55,7 +55,8 @@ class Header extends Component {
           </div>
           <div className="title-slider">
             {this.props.user.id ? (
-              <div>
+              <div className="google-info">
+                <img alt={this.props.user.fullname} src={this.props.user.avatar} />
                 <span>Welcome {this.props.user.fullname}</span>
               </div>
             ) : null}

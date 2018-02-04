@@ -32,7 +32,7 @@ class Stripe extends Component {
   };
   render() {
     return (
-      <div>
+      <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
         <h1>Pay with Stripe</h1>
         <div className="Checkout">
           <StripeCheckout

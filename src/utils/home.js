@@ -63,6 +63,71 @@ class Home extends Component {
             <button>View details</button>
           </div>
         </div>
+        <div className="item-content">
+          <span className="title-item">Underpants</span>
+          <img src="https://www.decathlon.fr/media/823/8237717/big_595c9a2093c54b9e95c1818561369fc7.jpg"  alt="underpants" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+            do eiusmod tempor incididunt
+          </p>
+          <p className="price">9,99€</p>
+          <div className="item-button-zone">
+            <button>Add to cart</button>
+            <button>View details</button>
+          </div>
+        </div>
+        <div className="item-content">
+          <span className="title-item">Underpants</span>
+          <img src="https://www.decathlon.fr/media/823/8237717/big_595c9a2093c54b9e95c1818561369fc7.jpg"  alt="underpants" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+            do eiusmod tempor incididunt
+          </p>
+          <p className="price">9,99€</p>
+          <div className="item-button-zone">
+            <button>Add to cart</button>
+            <button>View details</button>
+          </div>
+        </div>
+        <div className="item-content">
+          <span className="title-item">Underpants</span>
+          <img src="https://www.decathlon.fr/media/823/8237717/big_595c9a2093c54b9e95c1818561369fc7.jpg"  alt="underpants" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+            do eiusmod tempor incididunt
+          </p>
+          <p className="price">9,99€</p>
+          <div className="item-button-zone">
+            <button>Add to cart</button>
+            <button>View details</button>
+          </div>
+        </div>
+        <div className="item-content">
+          <span className="title-item">Underpants</span>
+          <img src="https://www.decathlon.fr/media/823/8237717/big_595c9a2093c54b9e95c1818561369fc7.jpg"  alt="underpants" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+            do eiusmod tempor incididunt
+          </p>
+          <p className="price">9,99€</p>
+          <div className="item-button-zone">
+            <button>Add to cart</button>
+            <button>View details</button>
+          </div>
+        </div>
+        <div className="item-content">
+          <span className="title-item">Underpants</span>
+          <img src="https://www.decathlon.fr/media/823/8237717/big_595c9a2093c54b9e95c1818561369fc7.jpg"  alt="underpants" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+            do eiusmod tempor incididunt
+          </p>
+          <p className="price">9,99€</p>
+          <div className="item-button-zone">
+            <button>Add to cart</button>
+            <button>View details</button>
+          </div>
+        </div>
       </div>
     </div>
       <div className="Reviews-test">
